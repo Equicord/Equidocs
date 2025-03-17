@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #8c8eff;
+    --background-color: #121212;
+    --sidebar-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --code-bg: #000000;
+    --warning-bg: #332d00;
+    --warning-border: #665c00;
+    --warning-text: #ffda4c;
+    --danger-bg: #350a0f;
+    --danger-border: #5c151e;
+    --danger-text: #ff6b7f;
+    --correct-bg: #0f352e;
+    --correct-border: #0f352e;
+    --correct-text: #00ff9c;
+    --info-bg: #0f1f35;
+    --info-border: #0f1f35;
+    --info-text: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 280px;
+    background: var(--sidebar-bg);
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #e2e8f0;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+    margin-left: 280px;
+    max-width: 900px;
+}
+
+.header {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-title {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-bottom: 8px;
+}
+
+.nav-links a {
+    color: #b8b8b8;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px 0;
+    display: block;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+h1, h2, h3, h4 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+}
+
+h1 {
+    font-size: 2.25rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.platform-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.warning-box, .danger-box, .correct-box, .info-box {
+    padding: 1px 10px;
+    margin: 8px;
+    border-radius: 3px;
+    border-left: 5px solid;
+}
+
+.warning-box > :first-child, 
+.danger-box > :first-child, 
+.correct-box > :first-child, 
+.info-box > :first-child {
+    margin-top: 0.5em;
+}
+
+.warning-box {
+    background-color: var(--warning-bg);
+    border-color: var(--warning-text);
+    color: var(--warning-text);
+}
+
+.danger-box {
+    background-color: var(--danger-bg);
+    border-color: var(--danger-text);
+    color: var(--danger-text);
+}
+
+.correct-box {
+    background-color: var(--correct-bg);
+    border-color: var(--correct-text);
+    color: var(--correct-text);
+}
+
+.info-box {
+    background-color: var(--info-bg);
+    border-color: var(--info-text);
+    color: var(--info-text);
+}
+
+pre {
+    background-color: var(--code-bg);
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 20px 0;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    padding: 2px 5px;
+    background-color: var(--code-bg);
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    padding: 0;
+    background: none;
+}
+
+.footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #718096;
+}
+
+.platform-icon {
+    margin-right: 8px;
+}
+.custom-dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #303136;
+    color: white;
+    width: 300px;
+}
+.custom-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.custom-dialog button {
+    background-color: #5865f2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}

@@ -1,14 +1,14 @@
 :root {
-    --primary-color: #8c8eff;
-    --primary-hover: #a5a6ff;
-    --background-color: #0f0f13;
-    --sidebar-bg: #16161d;
-    --content-bg: #1a1a23;
-    --text-color: #e6e6e6;
-    --text-muted: #a0a0a0;
-    --code-bg: #0d0d12;
-    --card-bg: #1e1e2a;
-    --border-color: #2a2a3a;
+    --primary-color: #cccccc;
+    --primary-hover: #ffffff;
+    --background-color: #111111;
+    --sidebar-bg: #1a1a1a;
+    --content-bg: #222222;
+    --text-color: #eeeeee;
+    --text-muted: #888888;
+    --code-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --border-color: #333333;
     
     --warning-bg: rgba(255, 218, 76, 0.1);
     --warning-border: #665c00;
@@ -22,9 +22,9 @@
     --correct-border: #0f352e;
     --correct-text: #00ff9c;
     
-    --info-bg: rgba(88, 101, 242, 0.1);
-    --info-border: #5865f2;
-    --info-text: #e0e0e0;
+    --info-bg: rgba(204, 204, 204, 0.1);
+    --info-border: #666666;
+    --info-text: #cccccc;
     
     --radius-sm: 6px;
     --radius-md: 10px;
@@ -58,12 +58,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #3a3a4a;
+    background: var(--border-color);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #4a4a5a;
+    background: var(--text-muted);
 }
 
 .container {
@@ -157,13 +157,12 @@ body {
 }
 
 .nav-links a:hover {
-    background-color: #4752C4;
-    transition: all 0.2s ease;
+    background-color: var(--border-color);
 }
 
 .nav-links a.active {
     color: var(--primary-color);
-    background-color: rgba(140, 142, 255, 0.15);
+    background-color: rgba(204, 204, 204, 0.15);
     font-weight: 500;
 }
 
@@ -320,8 +319,8 @@ pre code {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--card-bg);
+    color: var(--text-color);
     border-radius: var(--radius-sm);
     font-weight: 500;
     transition: var(--transition);
@@ -331,9 +330,9 @@ pre code {
 }
 
 .btn:hover {
-    background-color: var(--primary-hover);
+    background-color: var(--sidebar-bg);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(140, 142, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .card-grid {
@@ -517,7 +516,7 @@ th {
 }
 
 tr:hover {
-    background-color: rgba(140, 142, 255, 0.05);
+    background-color: rgba(204, 204, 204, 0.05);
 }
 
 .custom-dialog {
@@ -560,7 +559,7 @@ tr:hover {
 }
 
 .github-link:hover {
-    color: #5865F2;
+    color: var(--primary-hover);
 }
 
 img.emoji {

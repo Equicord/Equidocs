@@ -7,15 +7,34 @@
     <title>Equicord | Documentation</title>
     <link rel="icon" href="https://equicord.org/favicon.ico">
     <meta name="color-scheme" content="dark">
-    <!-- Embed Stuff / Discord -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.equicord.org">
     <meta property="og:title" content="An Enhanced Version of Vencord | Equicord Documentation">
     <meta property="og:description" content="Documentation for A fork that has everything you need, third-party plugins, and more.">
-    <meta property="og:image" content="https://i.imgur.com/57ATLZu.png">
+    <meta property="og:image" content="./assets/logo/equicord.png">
     <meta name="theme-color" content="#5865F2">
+    <script>
+      window.onload = function() {
+        const script = document.createElement('script');
+        script.src = "https://unpkg.com/twemoji@14.0.2/dist/twemoji.min.js";
+        script.crossOrigin = "anonymous";
+        script.onload = function() {
+          twemoji.parse(document.body, {
+            folder: 'svg',
+            ext: '.svg',
+            base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
+          });
+        };
+        document.head.appendChild(script);
+      }
+    </script>
 </head>
 <body>
+    <button class="menu-toggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+    </button>
     <div class="container">
         <div class="sidebar">
             <div class="header">
@@ -26,52 +45,49 @@
                 <script src="./script.js"></script>
             </div>
             
-            <div class="nav-title">🎯Getting Started</div>
+            <div class="nav-title">🎯 Getting Started</div>
             <ul class="nav-links">
-                <li><a href="#GS" class="active">❔Where to Start?</a></li>
+                <li><a href="#GS" class="active">❔ Where to Start?</a></li>
             </ul>
             
-            <div class="nav-title">Installation Methods</div>
+            <div class="nav-title">🔌 Installation</div>
             <ul class="nav-links">
-                <li><a href="#windows"><img src="https://cdn.nest.rip/uploads/3d28f396-36ac-403e-9be4-25ff31cad707.png" style="height: 1em; vertical-align: middle;"> Windows Installation</a></li>
-                <li><a href="#macos"><img src="https://cdn.nest.rip/uploads/daa047b4-e5d8-46a7-a815-b9f8ec5760b2.png" style="height: 1em; vertical-align: middle;"> MacOS Installation</a></li>
-                <li><a href="#linux"><img src="https://cdn.nest.rip/uploads/4c332ba0-057b-429c-986d-0fa53bb24c9d.png" style="height: 1em; vertical-align: middle;"> Linux Installation</a></li>
+                <li><a href="#windows"><img src="./assets/OS/windows.png" style="height: 1.2em; vertical-align: text-top; margin-right: 0.3em;"> Windows Installation</a></li>
+                <li><a href="#macos"><img src="./assets/OS/macOS.png" style="height: 1.2em; vertical-align: text-top; margin-right: 0.3em;"> MacOS Installation</a></li>
+                <li><a href="#linux"><img src="./assets/OS/linux.png" style="height: 1.2em; vertical-align: text-top; margin-right: 0.3em;"> Linux Installation</a></li>
                 <li><a href="#devbuild">🏗️ Building from source</a></li>
             </ul>
             <div class="nav-title">🏭 Plugin Development</div>
             <ul class="nav-links">
                 <li><a href="#pd-iup">🏗️/🏭 Installing Userplugins</a></li>
-                <li><a href="#pd-faq">🏗️🏭 PD-FAQ</a></li>
+                <li><a href="#Extras">🏗️🏭 Extras</a></li>
 
-            <div class="nav-title"><img src="https://cdn.nest.rip/uploads/b8e26935-aace-4a96-9a82-edca8f8cd440.png" style="height: 1em; vertical-align: middle;"> Resources</div>
+            <div class="nav-title"><img src="./assets/emoji/ring-buoy.png" style="height: 1em; vertical-align: middle;"> Resources</div>
             <ul class="nav-links">
                 <li><a href="#FAQ">❔FAQ</a></li>
-                <li><a href="https://github.com/Equicord/Equicord" target="_blank"><img src="https://cdn.nest.rip/uploads/ac28544f-44e2-47c3-ada2-c3d485be8d50.png" style="height: 1em; vertical-align: middle;"> GitHub Repository</a></li>
+                <li><a href="https://github.com/Equicord/Equicord" target="_blank"><img src="./assets/logo/github.png" style="height: 1em; vertical-align: middle;"> GitHub Repository </a></li>
                 <li>
-                    <a href="https://discord.gg/equicord" id="support-link"><img src="https://cdn.nest.rip/uploads/09cd60ba-ea7f-43b3-82c6-72597788ab60.png" style="height: 1em; vertical-align: middle;"> Discord</a>
+                    <a href="https://discord.gg/equicord" id="support-link"><img src="./assets/logo/discord.png" style="height: 1em; vertical-align: middle;"> Discord </a>
                 </li>
             </ul>
         </div>
         
         <div class="content">
             <div class="header">
-                <h1 id="GS">Equicord Documentation</h1>
-                <p>📚 A unfinished and foolproof guide to installing and using Equicord</p>
+                <h1 id="GS">Equicord <a href="https://github.com/Equicord/EquiDocs" target="_blank" class="github-link">Documentation</a></h1>
+                <p>📚 A finished and foolproof guide to installing and using Equicord</p>
             <div class="info-box">
             </a>
             <h2>👋 Welcome to the Equicord documentation!</h2>
         </p>This guide will help you get started with installing and using Equicord. Equicord is a Vencord fork that is actively maintained and updated by the Equicord team and Equicord Contributors.</p> 
         </p>You have the ways to install Equicord for the 3 main Operating Systems. (Linux, MacOS and Windows)</p>
-        <!-- Windows Install -->
-        </p><img src="https://cdn.nest.rip/uploads/3d28f396-36ac-403e-9be4-25ff31cad707.png" style="height: 1em; vertical-align: middle;"><a href="#windows"> Windows:</a>
+        </p><img src="./assets/OS/windows.png" style="height: 1.35em; vertical-align: middle; margin-right: 0.3em;"><a href="#windows"> Windows:</a>
         Equicord can be installed on Windows using the GUI installer or the CLI installer. The GUI installer is recommended for most users, while the CLI installer is more of a basic option.
         Equibop can be installed on Windows using the Installer's (X64/AMD64/ARM64/etc) or the Portable zip files.</p>
-        <!-- MacOS Install -->
-        </p><img src="https://cdn.nest.rip/uploads/daa047b4-e5d8-46a7-a815-b9f8ec5760b2.png" style="height: 1em; vertical-align: middle;"><a href="#macos"> MacOS:</a>
+        </p><img src="./assets/OS/macOS.png" style="height: 1.35em; vertical-align: middle; margin-right: 0.3em;"><a href="#macos"> MacOS:</a>
         Equicord can be installed on MacOS using the GUI installer. As a Secondary option for Mac there is Equibop.
         <a href="https://github.com/Equicord/Equibop">Equibop</a> can be installed be install via DMG file or ZIP. If you would like more information on Equibop please visit the Equibop Repository.</p>
-        <!-- Linux Install -->
-        </p><img src="https://cdn.nest.rip/uploads/4c332ba0-057b-429c-986d-0fa53bb24c9d.png" style="height: 1em; vertical-align: middle;"><a href="#linux"> Linux:</a>
+        <p><img src="./assets/OS/linux.png" style="height: 1.35em; vertical-align: middle; margin-right: 0.3em;"><a href="#linux"> Linux:</a>
         Equicord can be installed on Linux using the right installation for your desktop environment. There are several options available, including GUI for X11 and Wayland, CLI, and a shell script installation. You can also install Equicord from the Arch User Repository.
         It is recommended to use <a href="https://github.com/Equicord/Equibop">Equibop</a> if on Linux as it is a stable version of Equicord for Linux using discord web.</p>
     </div>
@@ -82,8 +98,7 @@
             
             <p>This guide will walk you through the installation process for Equicord across various platforms. Choose the appropriate method for your operating system.</p>
             
-            <!-- Windows Install -->
-            <h2 id="windows" class="platform-section"><img src="https://cdn.nest.rip/uploads/3d28f396-36ac-403e-9be4-25ff31cad707.png" style="height: 1em; vertical-align: middle;"> Windows</h2>
+            <h2 id="windows" class="platform-section"><img src="./assets/OS/windows.png" style="height: 1em; vertical-align: middle;"> Windows</h2>
             <p>Equicord offers both GUI and CLI installation options for Windows users:</p>
             <ul>
                 <li><strong>GUI Installer:</strong> <a href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe">Download Equilotl.exe</a></li>
@@ -91,17 +106,15 @@
                 <li><strong>Equibop: </strong> <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-win.exe"> Download Equibop</a></li>
             </ul>
             
-            <!-- MacOS Install -->
-            <h2 id="macos" class="platform-section"><span class="platform-icon"><img src="https://cdn.nest.rip/uploads/daa047b4-e5d8-46a7-a815-b9f8ec5760b2.png" alt=" " style="height: 1em; vertical-align: middle;"></span> MacOS</h2>
+            <h2 id="macos" class="platform-section"><span class="platform-icon"><img src="./assets/OS/macOS.png" alt=" " style="height: 1em; vertical-align: middle;"></span> MacOS</h2>
             <p>For MacOS users, we provide a GUI installer & Equibop.</p>
             <ul>
                 <li><strong>GUI Installer:</strong> <a href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.MacOS.zip">Download Equilotl.MacOS.zip</a></li>
-                <li><strong>Equibop(Recommended)</strong> <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-mac-universal.dmg">DMG</a>,<a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-mac-universal.zip"> ZIP</a></li>
+                <li><strong>Equibop (Recommended)</strong> <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-mac-universal.dmg">DMG</a>,<a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-mac-universal.zip"> ZIP</a></li>
             </ul>
 
-            <!-- Linux Install -->
-            <h2 id="linux" class="platform-section"><img src="https://cdn.nest.rip/uploads/4c332ba0-057b-429c-986d-0fa53bb24c9d.png" style="height: 1em; vertical-align: middle;"> Linux</h2>
-            <p>Linux users have several installation options depending on their desktop environment and preferences: (Note: For Equibop if you don't know the difference, pick amd64.) </p>
+            <h2 id="linux" class="platform-section"><img src="./assets/OS/linux.png" style="height: 1em; vertical-align: middle;"> Linux</h2>
+            <p>Linux users have several installation options depending on their desktop environment and preferences: </p>
             <ul>
                 <li><strong>GUI for X11:</strong> <a href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11">Download Equilotl-x11</a></li>
                 <li><strong>GUI for Wayland:</strong> <a href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland">Download Equilotl-wayland</a></li>
@@ -118,11 +131,9 @@
             </ul>
             
 
-            <!---Equicord Source-->
             <h2 id="devbuild" class="platform-section">🏗️ Building from source</h2>
             <div class="warning-box">
-                <h4> 🏗️ Building from source</h4>
-                <p>Equicord developer build is intended only for plugin development or when adding custom user plugins. We strongly recommend against using it unless you have sufficient technical knowledge.</p>
+                <h4>Equicord developer build is intended only for plugin development or when adding custom user plugins. We strongly recommend against using it unless you have sufficient technical knowledge.</h4>
             </div>
             <p>If you need to build Equicord from source for development purposes, follow these steps:</p>
             
@@ -154,20 +165,19 @@ cd Equicord</code></pre>
             <h3> 💉 Inject Equicord into Discord</h3>
             <pre><code>pnpm inject</code></pre>
 
-            <!--Plugin Dev Stuff-->
             <h1> 🏭/🏗️ Plugin Development</h1>
             <h2 id="pd-iup" class="platform-section">🏭/🏗️ Installing Userplugins</h2>
             <p>Equicord supports allows any plugin to be build into your Discord.(Includes 3rd-party plugins from Vencord). To install a user plugin, follow these steps:</p>
             <h3>1. ⏬ Download the Plugin</h3>
             <div class="correct-box">
                 <h4> ✅ Correct:</h4>
-                <pre><code>src/userplugins/MyMagicPlugin/MyMagicPlugin.ts</code></pre>
-                <pre><code>src/userplugins/MyMagicPlugin/index.tsx</code></pre>
+                <pre><code>   src/userplugins/MyMagicPlugin/MyMagicPlugin.ts</code></pre>
+                <pre><code>   src/userplugins/MyMagicPlugin/index.tsx</code></pre>
             </div>
                 <div class="warning-box">
                     <h4>⚠️ Incorrect:</h4>
-                    <pre><code>src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.tsx</code></pre>
-                    <pre><code>src/userplugins/index.ts</code></pre>
+                    <pre><code>   src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.tsx</code></pre>
+                    <pre><code>   src/userplugins/index.ts</code></pre>
             </div>
 
             <h3>2. 📥 Place Plugin in Userplugins Folder</h3>
@@ -181,16 +191,15 @@ cd Equicord</code></pre>
             <h3>3. 🔃 Restart Discord</h3>
             <p>Restart Discord completely for the plugin to take effect. You can then enable it in Equicord settings.</p>
 
-            <h2 id="pd-faq" class="platform-section">🏗️🏭PD-FAQ</h2>
+            <h2 id="Extras" class="platform-section">🏗️🏭 Extras</h2>
             <div class="info-box">
-                <h3>This documentation currently unfinished. If you would like to contribute to Equicord open PR <a href="https://github.com/sitescript/Equidocs/pulls/">Here!</a></h3>
+                <h3>This documentation currently unfinished. If you would like to contribute to Equicord open PR <a href="https://github.com/Equicord/EquiDocs/pulls/">Here!</a></h3>
             </div>
             <h3>1. "My Plugin isn't working!"</h3>
             <h4>Make sure the plugin is in the correct folder and has the correct file structure. If you're still having issues, check the Equicord build logs for more information.</h4>
             <h3>2. Where do I get support about Plugin Development?</h3>
             <h4>For plugin development suggetions/support, You can ask in Equicord Discord. You may not get a reply if the User or Person is not knowledgeable on the topic.</h4>
-            <!-- FAQ Resources -->
-            <h2 id="FAQ" class="platform-section"><img src="https://cdn.nest.rip/uploads/b8e26935-aace-4a96-9a82-edca8f8cd440.png" style="height: 1em; vertical-align: middle;"> FAQ</h2>
+            <h2 id="FAQ" class="platform-section"><img src="./assets/emoji/ring-buoy.png" style="height: 1em; vertical-align: middle;"> FAQ</h2>
             <div class="warning-box">
                 <h3>IF YOU ARE GOING TO USE AI OR CHATGPT FOR SUPPORT YOU WILL BE SUPPORT BANNED. SUPPORT IS ONLY ON OUR DISCORD</h3>
             </div>
@@ -206,12 +215,12 @@ Install discord</code></pre>
 <h4>OR do a clean reinstall using the guide below (its completely different to a normal reinstall) from <a href="https://support.discord.com/hc/en-us/articles/115004307527--Windows-Corrupt-Installation">Here</a></h4>
 <h4>IF you need a Simpified way then follow this:</h4>
 <h4>Hold Windows Key and Press R, this box under should appear. Type %AppData% and click OK.</h4>
-<img src="https://cdn.nest.rip/uploads/acad4a6b-555b-42c5-afba-2f776bce0628.png" style="max-width: 100%; margin: 10px 0;">
+<img src="./assets/misc/appdata.png" style="max-width: 100%; margin: 10px 0;">
 <h4>Then Delete the Discord Folder.</h4>
-<img src="https://cdn.nest.rip/uploads/96e40afa-6a46-42fc-a148-3cd8f0a7428d.png" style="max-width: 100%; margin: 10px 0;">
+<img src="./assets/misc/delete.png" style="max-width: 100%; margin: 10px 0;">
 <h4>Repeat the same steps but with %LocalAppData% and delete the Discord Folder.</h4>
-<img src="https://cdn.nest.rip/uploads/673a2205-eadd-40ab-9e44-2ff0d8a4d9b5.png" style="max-width: 100%; margin: 10px 0;">
-<img src="https://cdn.nest.rip/uploads/6d33b62f-2cd2-4da5-8666-d4976e97580e.png" style="max-width: 100%; margin: 10px 0;">
+<img src="./assets/misc/localappdata.png" style="max-width: 100%; margin: 10px 0;">
+<img src="./assets/misc/delete.png" style="max-width: 100%; margin: 10px 0;">
 <div class="info-box">
     <h4>❕Then Install Discord again. If you want to download discord quickly you can from these 3 buttons.</h4>
     <a href="https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x64"><img src="https://raw.githubusercontent.com/amsam0/discord-icons/main/stable/linux.png" style="height: 1em; vertical-align: middle;"> Main Branch (Discord)</a><br>
@@ -223,14 +232,14 @@ Install discord</code></pre>
 <h3>4. Discord Activies aren't working!</h3>
 <h4>This could be because of OpenASAR, As we have had reports on this before. Simply uninject OpenASAR from Discord. This can be done by opening the Equicord installer.</h4>
 <h4>CLI:</h4>
-<img src="https://cdn.nest.rip/uploads/25ff26fb-6a77-4da6-8b94-c34b72a61be4.png" style="max-width: 100%; margin: 10px 0;">
+<img src="./assets/misc/cli.png" style="max-width: 100%; margin: 10px 0;">
 <h4>GUI:</h4>
-<img src="https://cdn.nest.rip/uploads/a3093699-06a8-4881-8e38-fcef78fa79d1.png" style="max-width: 100%; margin: 10px 0;">
+<img src="./assets/misc/gui.png" style="max-width: 100%; margin: 10px 0;">
     <div class="footer">
                 <p>© 2025 Equicord. This documentation is for informational purposes only.</p>
-                <p><a href="https://equicord.org" target="_blank">Equicord</a> | Made with love by Crxa</p>
+                <p><a href="https://equicord.org" target="_blank">Equicord</a> | Made with love by Crxa & Cortex</p>
             </div>
         </div>
     </div>
 </body>
-</html></div>
+</html>

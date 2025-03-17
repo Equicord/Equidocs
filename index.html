@@ -7,7 +7,14 @@
     <title>Equicord | Documentation</title>
     <link rel="icon" href="https://equicord.org/favicon.ico">
     <meta name="color-scheme" content="dark">
-
+    <!-- Embed Stuff / Discord -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.equicord.org">
+    <meta property="og:title" content="Equicord!">
+    <meta property="og:description" content="Documentation for Equicord, a maintained Vencord fork with enhanced features and plugins">
+    <meta property="og:image" content="https://equicord.org/favicon.ico">
+    <meta property="og:site_name" content="Equicord Documentation">
+    <meta name="theme-color" content="#5865F2">
 </head>
 <body>
     <div class="container">
@@ -22,12 +29,12 @@
             
             <div class="nav-title">🎯Getting Started</div>
             <ul class="nav-links">
-                <li><a href="#starter" class="active">❔Where to Start?</a></li>
+                <li><a href="#GS" class="active">❔Where to Start?</a></li>
             </ul>
             
             <div class="nav-title">Installation Methods</div>
             <ul class="nav-links">
-                <li><a href="#windows">🪟 Windows Installation</a></li>
+                <li><a href="#windows"><img src="https://cdn.nest.rip/uploads/3d28f396-36ac-403e-9be4-25ff31cad707.png" style="height: 1em; vertical-align: middle;"> Windows Installation</a></li>
                 <li><a href="#macos"><img src="https://cdn.nest.rip/uploads/daa047b4-e5d8-46a7-a815-b9f8ec5760b2.png" style="height: 1em; vertical-align: middle;"> MacOS Installation</a></li>
                 <li><a href="#linux"><img src="https://cdn.nest.rip/uploads/4c332ba0-057b-429c-986d-0fa53bb24c9d.png" style="height: 1em; vertical-align: middle;"> Linux Installation</a></li>
                 <li><a href="#devbuild">🏗️ Building from source</a></li>
@@ -37,7 +44,7 @@
                 <li><a href="#pd-iup">🏗️/🏭 Installing Userplugins</a></li>
                 <li><a href="#pd-faq">🏗️🏭 PD-FAQ</a></li>
 
-            <div class="nav-title">🛟 Resources</div>
+            <div class="nav-title"><img src="https://cdn.nest.rip/uploads/b8e26935-aace-4a96-9a82-edca8f8cd440.png" style="height: 1em; vertical-align: middle;"> Resources</div>
             <ul class="nav-links">
                 <li><a href="#FAQ">❔FAQ</a></li>
                 <li><a href="https://github.com/Equicord/Equicord" target="_blank"><img src="https://cdn.nest.rip/uploads/ac28544f-44e2-47c3-ada2-c3d485be8d50.png" style="height: 1em; vertical-align: middle;"> GitHub Repository</a></li>
@@ -49,14 +56,15 @@
         
         <div class="content">
             <div class="header">
-                <h1>Equicord Documentation</h1>
+                <h1 id="GS">Equicord Documentation</h1>
                 <p>📚 A unfinished and foolproof guide to installing and using Equicord</p>
             <div class="info-box">
+            </a>
             <h2>👋 Welcome to the Equicord documentation!</h2>
         </p>This guide will help you get started with installing and using Equicord. Equicord is a Vencord fork that is actively maintained and updated by the Equicord team and Equicord Contributors.</p> 
         </p>You have the ways to install Equicord for the 3 main Operating Systems. (Linux, MacOS and Windows)</p>
         <!-- Windows Install -->
-        </p> 🪟<a href="#windows">Windows:</a>
+        </p><img src="https://cdn.nest.rip/uploads/3d28f396-36ac-403e-9be4-25ff31cad707.png" style="height: 1em; vertical-align: middle;"><a href="#windows"> Windows:</a>
         Equicord can be installed on Windows using the GUI installer or the CLI installer. The GUI installer is recommended for most users, while the CLI installer is more of a basic option.
         Equibop can be installed on Windows using the Installer's (X64/AMD64/ARM64/etc) or the Portable zip files.</p>
         <!-- MacOS Install -->
@@ -76,7 +84,7 @@
             <p>This guide will walk you through the installation process for Equicord across various platforms. Choose the appropriate method for your operating system.</p>
             
             <!-- Windows Install -->
-            <h2 id="windows" class="platform-section"><span class="platform-icon">🪟</span> Windows</h2>
+            <h2 id="windows" class="platform-section"><img src="https://cdn.nest.rip/uploads/3d28f396-36ac-403e-9be4-25ff31cad707.png" style="height: 1em; vertical-align: middle;"> Windows</h2>
             <p>Equicord offers both GUI and CLI installation options for Windows users:</p>
             <ul>
                 <li><strong>GUI Installer:</strong> <a href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe">Download Equilotl.exe</a></li>
@@ -94,13 +102,16 @@
 
             <!-- Linux Install -->
             <h2 id="linux" class="platform-section"><img src="https://cdn.nest.rip/uploads/4c332ba0-057b-429c-986d-0fa53bb24c9d.png" style="height: 1em; vertical-align: middle;"> Linux</h2>
-            <p>Linux users have several installation options depending on their desktop environment and preferences:</p>
+            <p>Linux users have several installation options depending on their desktop environment and preferences: (Note: For Equibop if you don't know the difference, pick amd64.) </p>
             <ul>
                 <li><strong>GUI for X11:</strong> <a href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11">Download Equilotl-x11</a></li>
                 <li><strong>GUI for Wayland:</strong> <a href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland">Download Equilotl-wayland</a></li>
                 <li><strong>CLI:</strong> <a href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-Linux">Download EquilotlCli-Linux</a></li>
-                <li><strong>Arch User Repository:</strong> <a href="https://aur.archlinux.org/packages?O=0&K=equicord">Equicord on AUR</a></li>
-                <li><strong>Equibop(Recommended):</strong> <a href="https://flathub.org/apps/io.github.equicord.equibop">Flatpak</a> <a href="https://aur.archlinux.org/packages?O=0&K=equibop">AUR</a></li>
+                <li><strong>Arch User Repository:</strong> <a href="https://aur.archlinux.org/packages/equicord-installer-bin">Equicord on AUR</a></li>
+                <li><strong>Equibop:</strong> <a href="https://aur.archlinux.org/packages/equibop">Equibop on AUR</a><br>
+                <li><strong>Equibop on amd64 / x86_64:</strong> <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-x86_64.AppImage">AppImage</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-amd64.deb">Ubuntu/Debian (.deb)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-x86_64.rpm">Fedora/RHEL (.rpm)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-x64.tar.gz">tarball</a></li>
+            </li>
+            <li><strong>Equibop on Arm®64 / aarch64:</strong> <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.AppImage">AppImage</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.deb">Ubuntu/Debian (.deb)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-aarch64.rpm">Fedora/RHEL (.rpm)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.tar.gz">tarball</a></li>
                 <li><strong>Shell Script Installation:</strong>
                     <pre><code>sh -c "$(curl -sS https://raw.githubusercontent.com/Equicord/Equicord/refs/heads/main/misc/install.sh)"</code></pre>
                 </li>
@@ -179,7 +190,7 @@ cd Equicord</code></pre>
             <h3>2. Where do I get support about Plugin Development?</h3>
             <h4>For plugin development suggetions/support, You can ask in Equicord Discord. You may not get a reply if the User or Person is not knowledgeable on the topic.</h4>
             <!-- FAQ Resources -->
-            <h2 id="FAQ" class="platform-section">🛟 FAQ</h2>
+            <h2 id="FAQ" class="platform-section"><img src="https://cdn.nest.rip/uploads/b8e26935-aace-4a96-9a82-edca8f8cd440.png" style="height: 1em; vertical-align: middle;"> FAQ</h2>
             <div class="warning-box">
                 <h3>IF YOU ARE GOING TO USE AI OR CHATGPT FOR SUPPORT YOU WILL BE SUPPORT BANNED. SUPPORT IS ONLY ON OUR DISCORD</h3>
             </div>

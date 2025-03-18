@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('equicordLogo').classList.remove('spinning');
                 clickCount = 0;
                 window.open('https://equicord.org', '_blank');
-            }, 500);
+            }, 800);
         }
     });
 

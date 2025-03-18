@@ -110,7 +110,7 @@ body {
 }
 
 .logo:hover {
-    transform: translateY(-2px);
+    transform: translateX(5px);
 }
 
 .logo img {

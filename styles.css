@@ -1,11 +1,11 @@
 :root {
     --primary-color: #cccccc;
-    --primary-hover: #ffffff;
+    --primary-hover: #adacac;
     --background-color: #111111;
     --sidebar-bg: #1a1a1a;
     --content-bg: #222222;
     --text-color: #eeeeee;
-    --text-muted: #888888;
+    --text-muted: #838383;
     --code-bg: #0a0a0a;
     --card-bg: #1a1a1a;
     --border-color: #333333;
@@ -82,6 +82,10 @@ body {
     z-index: 100;
     transition: var(--transition);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.open {
+    transform: translateX(0) !important;
 }
 
 .content {
@@ -240,7 +244,6 @@ a:hover {
 .info-box > * {
     text-align: left;
     margin: 0.5em 0;
-    padding-left: 3px;
 }
 
 .warning-box p,
@@ -297,10 +300,19 @@ code {
     color: var(--primary-color);
 }
 
+.warning-box pre,
+.correct-box pre,
+.danger-box pre,
+.info-box pre {
+    margin: 10px 0;
+    padding: 15px;
+}
+
 pre code {
     padding: 0;
     background: none;
     color: var(--text-color);
+    display: block;
 }
 
 .footer {
@@ -385,29 +397,32 @@ pre code {
     transition: var(--transition);
 }
 
-.menu-toggle:hover {
-    background-color: var(--card-bg);
-}
-
 @media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-    
-    .sidebar.active {
-        transform: translateX(0);
-    }
-    
     .menu-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
     }
     
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
     .content {
         margin-left: 0;
-        padding: 15px;
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0 auto;
     }
     
     .platform-section {
@@ -454,7 +469,7 @@ pre code {
 
 @media (max-width: 480px) {
     .content {
-        padding: 10px;
+        padding: 20px;
     }
 
     pre {
@@ -463,6 +478,10 @@ pre code {
 
     .platform-section {
         padding: 12px;
+    }
+
+    .card-grid {
+        padding: 0;
     }
 }
 

@@ -131,9 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
     
-    menuToggle.addEventListener('click', function() {
-        sidebar.classList.toggle('active');
-    });
+    if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+        });
+    }
     
     document.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
@@ -142,8 +144,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || 
                  e.target.closest('a') || e.target.closest('button'));
                 
-            if ((isClickOutside || isClickOnInteractive) && sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active');
+            if ((isClickOutside || isClickOnInteractive) && sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
             }
         }
     });

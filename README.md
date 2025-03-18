@@ -1,4 +1,4 @@
-# Equidocs [<img src="https://i.imgur.com/57ATLZu.png" width="225" align="right" alt="Equidocs">](https://github.com/Sitescript/Equidocs)
+# Equidocs [<img src="https://cdn.nest.rip/uploads/517de197-4d7c-4d91-9983-099d8999bf4b.png" width="225" align="right" alt="Equidocs">](https://github.com/Equicord/Equidocs)
 
 [![Discord](https://img.shields.io/discord/1207691698386501634.svg?color=768AD4&label=Discord&logo=discord&logoColor=white)](https://discord.gg/5Xh2W87egW)  
 

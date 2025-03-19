@@ -13,21 +13,7 @@
     <meta property="og:description" content="Documentation for A fork that has everything you need, third-party plugins, and more.">
     <meta property="og:image" content="./assets/logo/equicord.png">
     <meta name="theme-color" content="#5865F2">
-    <script>
-      window.onload = function() {
-        const script = document.createElement('script');
-        script.src = "https://unpkg.com/twemoji@14.0.2/dist/twemoji.min.js";
-        script.crossOrigin = "anonymous";
-        script.onload = function() {
-          twemoji.parse(document.body, {
-            folder: 'svg',
-            ext: '.svg',
-            base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
-          });
-        };
-        document.head.appendChild(script);
-      }
-    </script>
+    <script src="./script.js"></script>
 </head>
 <body>
     <button class="menu-toggle">

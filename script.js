@@ -136,7 +136,17 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebar.classList.toggle('open');
         });
     }
-    
+    const script = document.createElement('script');
+    script.src = "https://unpkg.com/twemoji@14.0.2/dist/twemoji.min.js";
+    script.crossOrigin = "anonymous";
+    script.onload = function() {
+        twemoji.parse(document.body, {
+            folder: 'svg',
+            ext: '.svg',
+            base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/'
+        });
+    };
+    document.head.appendChild(script);
     document.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
             const isClickOutside = !sidebar.contains(e.target) && !menuToggle.contains(e.target);
@@ -150,3 +160,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+

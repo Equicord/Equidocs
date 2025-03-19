@@ -108,21 +108,19 @@
                 <li><strong>Arch User Repository:</strong> <a href="https://aur.archlinux.org/packages/equicord-installer-bin">Equicord on AUR</a></li>
                 <li><strong>Equibop:</strong> <a href="https://aur.archlinux.org/packages/equibop">Equibop on AUR</a><br>
                 <li><strong>Equibop on amd64 / x86_64:</strong> <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-x86_64.AppImage">AppImage</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-amd64.deb">Ubuntu/Debian (.deb)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-x86_64.rpm">Fedora/RHEL (.rpm)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-x64.tar.gz">tarball</a></li>
-                <li><strong>Equibop on Flatpak/Flathub:</strong> <a href="https://flathub.org/apps/io.github.equicord.equibop">Flathub/Flatpak</a>
-            </li>
-            <li><strong>Equibop on Arm®64 / aarch64:</strong> <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.AppImage">AppImage</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.deb">Ubuntu/Debian (.deb)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-aarch64.rpm">Fedora/RHEL (.rpm)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.tar.gz">tarball</a></li>
-                <li><strong>Shell Script Installation:</strong>
-                    <pre><code>sh -c "$(curl -sS https://raw.githubusercontent.com/Equicord/Equicord/refs/heads/main/misc/install.sh)"</code></pre>
-                </li>
+                <li><strong>Equibop on Flatpak/Flathub:</strong> <a href="https://flathub.org/apps/io.github.equicord.equibop">Flathub/Flatpak</a></li>
+                <li><strong>Equibop on Arm®64 / aarch64:</strong> <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.AppImage">AppImage</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.deb">Ubuntu/Debian (.deb)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-aarch64.rpm">Fedora/RHEL (.rpm)</a>, <a href="https://github.com/Equicord/Equibop/releases/latest/download/Equibop-linux-arm64.tar.gz">tarball</a></li>
+                <li><strong>Equibop on Shell Via Curl:</strong> <pre><code>sh -c "$(curl -sS https://raw.githubusercontent.com/Equicord/Equicord/refs/heads/main/misc/install.sh)"</code></pre></li>
+                <li><strong>Equibop on NixOS:</strong><pre><code> nix-shell -p equibop</code></pre></li>
             </ul>
             
 
             <h2 id="devbuild" class="platform-section">🏗️ Building from source</h2>
             <div class="warning-box">
-                <h4>Equicord developer build is intended only for plugin development or when adding custom user plugins. We strongly recommend against using it unless you have sufficient technical knowledge.</h4>
+                <h4>⚠️Equicord developer build is intended only for plugin development or when adding custom user plugins. We strongly recommend against using it unless you have sufficient technical knowledge.</h4>
             </div>
+            <h2>Equicord:</h2>
             <p>If you need to build Equicord from source for development purposes, follow these steps:</p>
-            
             <h3 id="Prerequisites" class="platform-section"> 🧩 Prerequisites</h3>
             <p>Before starting, ensure you have the following dependencies installed:</p>
             <ul>
@@ -150,7 +148,40 @@ cd Equicord</code></pre>
             </div>
             <h3> 💉 Inject Equicord into Discord</h3>
             <pre><code>pnpm inject</code></pre>
-
+            <h3> 🛠️ Start Equicord</h3>
+            <h4>Start up Discord and you now have Equicord! Well done you build Equicord from source!</h4>
+            <h2>Equibop:</h2>
+            <div class="warning-box">
+                <h4>Equicord developer build is intended only for plugin development or when adding custom user plugins. We strongly recommend against using it unless you have sufficient technical knowledge.</h4>
+            </div>
+            <p>If you need to build Equibop from source for development purposes, follow these steps:</p>
+            <h3 id="Prerequisites" class="platform-section"> 🧩 Prerequisites</h3>
+            <p>Before starting, ensure you have the following dependencies installed:</p>
+            <ul>
+                <li><a href="https://git-scm.com/download" target="_blank">Git</a></li>
+                <li><a href="https://nodejs.dev/en/" target="_blank">Node.js LTS</a></li>
+            </ul>
+            <h3> 🛠️ Install pnpm</h3>
+            <div class="warning-box">
+                <p><strong>Important:</strong> For subsequent steps, do NOT use an admin/root terminal. Doing so could damage your Discord/Equicord installation and require a complete reinstall.</p>
+                <p><strong>Note:</strong> The following command may require administrator/root privileges. After installation, you may need to close and reopen your terminal for pnpm to be available in your PATH.</p>
+            </div>
+            <pre><code>npm i -g pnpm</code></pre>
+            <h3>🛠️ Clone the Repository</h3>
+            <pre><code>git clone git clone https://github.com/Equicord/Equibop
+cd Equibop</code></pre>
+            <h3> 🛠️ Install Dependencies</h3>
+            <pre><code>pnpm i</code></pre>
+            <h3> 🛠️ Build Equibop</h3>
+            <h4>Equibop can be built in 4 ways. Such as:</h4>
+            <h4>Run it without packaging</h4>
+            <pre><code>pnpm start</code></pre>
+            <h4>Via Package Only</h4>
+            <pre><code>pnpm package</code></pre>
+            <h4>Only build the pacman target</h4>
+            <pre><code>pnpm package --linux pacman</code></pre>
+            <h4>Package to a directory only</h4>
+            <pre><code>pnpm package:dir</code></pre>
             <h1> 🏭/🏗️ Plugin Development</h1>
             <h2 id="pd-iup" class="platform-section">🏭/🏗️ Installing Userplugins</h2>
             <p>Equicord supports allows any plugin to be build into your Discord.(Includes 3rd-party plugins from Vencord). To install a user plugin, follow these steps:</p>
@@ -221,6 +252,10 @@ Install discord</code></pre>
 <img src="./assets/misc/cli.png" style="max-width: 100%; margin: 10px 0;">
 <h4>GUI:</h4>
 <img src="./assets/misc/gui.png" style="max-width: 100%; margin: 10px 0;">
+<h3>5. I'm using Equibop and it's not dectecting my game(s) or programs!</h3>
+<h4>This is because of how Equibop detects games and programs using AARPC. If you would like to look into AARPC you can <a href="https://github.com/OpenAsar/arrpc">Here!</a></h4>
+<h3>6. I have a different issue!</h3>
+<h4>For any other issues, please check the Equicord Discord server for support. You can find the link in the Resources section of this documentation.</h4>
     <div class="footer">
                 <p>© 2025 Equicord. This documentation is for informational purposes only.</p>
                 <p><a href="https://equicord.org" target="_blank">Equicord</a> | Made with love by <a href="https://crxaw.tech" target="_blank">Crxa</a> & <a href="https://cortex.rest" target="_blank">Cortex</a></p>

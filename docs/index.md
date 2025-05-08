@@ -67,7 +67,7 @@ const members = [
     title: 'Team',
     links: [
       { icon: 'github', link: 'https://github.com/KrstlSkll69' },
-      { icon: svgIcon, link: 'https://indi.is-a-skid.cc/' }
+      { icon: svgIcon, link: 'https://krstlskll69.github.io' }
     ]
   },
   {

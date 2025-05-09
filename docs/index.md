@@ -62,7 +62,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/150982280?v=4', // Simplified for URL
+    avatar: 'https://avatars.githubusercontent.com/u/150982280?v=4',
     name: 'Krystal / Juniper🌸🎀',
     title: 'Team',
     links: [

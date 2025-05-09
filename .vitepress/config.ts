@@ -1,5 +1,4 @@
-import { defineConfig } from 'vitepress'
-
+import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Equicord Documentation",
@@ -16,6 +15,7 @@ export default defineConfig({
   sitemap: {
     hostname: "https://docs.equicord.org",
   },
+  cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -35,7 +35,7 @@ export default defineConfig({
           { text: 'User Plugins', link: '/plugins' },
           { text: 'FAQ', link: '/faq' }
         ]
-      }
+      },
     ],
     search: {
       provider: 'local',

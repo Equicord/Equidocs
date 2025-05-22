@@ -1,6 +1,5 @@
 # dependencies (bun install)
 node_modules
-pnpm-lock.yaml
 
 # output
 out

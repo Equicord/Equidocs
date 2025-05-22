@@ -44,7 +44,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://vmohammad.dev/avatar',
+    avatar: 'https://avatars.githubusercontent.com/u/62218284?v=4',
     name: 'vmohammad',
     title: 'Team',
     links: [

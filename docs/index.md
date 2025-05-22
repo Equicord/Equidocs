@@ -40,7 +40,8 @@ const members = [
     name: 'thororen',
     title: 'Owner',
     links: [
-      { icon: 'github', link: 'https://github.com/thororen1234' }
+      { icon: 'github', link: 'https://github.com/thororen1234' },
+      { icon: svgIcon, link: 'https://thororen.com' }
     ]
   },
   {
@@ -58,7 +59,7 @@ const members = [
     title: 'Team',
     links: [
       { icon: 'github', link: 'https://github.com/verticalsync' },
-
+      { icon: svgIcon, link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' }
     ]
   },
   {

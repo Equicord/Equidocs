@@ -97,30 +97,12 @@ const members = [
       { icon: 'github', link: 'https://github.com/SomeAspy' },
       { icon: svgIcon, link: 'https://aspy.dev/' }
     ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/143244075?v=4',
-    name: 'S€th',
-    title: 'Helper',
-    links: [
-      { icon: 'github', link: 'https://github.com/wont-stream' },
-      { icon: svgIcon, link: 'https://ipv4.army/' }
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/48805031?v=4',
-    name: 'Crxa',
-    title: 'Helper',
-    links: [
-      { icon: 'github', link: 'https://github.com/sitescript' },
-      { icon: svgIcon, link: 'https://www.crxaw.tech/' }
-    ]
   }
 ]
 </script>
 
 <div style="margin-top: 48px;"> 
   <h2 style="text-align: center; font-size: 24px; font-weight: 600; margin-bottom: 24px;">Our Team</h2>
-  <VPTeamMembers size="medium" :members="members" />
+  <VPTeamMembers size="small" :members="members" />
 </div>
 

@@ -97,6 +97,15 @@ const members = [
       { icon: 'github', link: 'https://github.com/SomeAspy' },
       { icon: svgIcon, link: 'https://aspy.dev/' }
     ]
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/159411967?v=4',
+    name: 'DrWhoFan13',
+    title: 'Helper',
+    links: [
+      { icon: 'github', link: 'https://github.com/DrWhoFan13' },
+      { icon: svgIcon, link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' }
+    ]
   }
 ]
 </script>

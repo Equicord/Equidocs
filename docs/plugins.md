@@ -14,7 +14,7 @@ Equicord supports any plugin to be built into your Discord (including 3rd-party 
 #### ✅ Correct:
 
 ```plaintext
-src/userplugins/MyMagicPlugin/MyMagicPlugin.ts
+src/userplugins/MyMagicPlugin.ts
 src/userplugins/MyMagicPlugin/index.tsx
 ```
 

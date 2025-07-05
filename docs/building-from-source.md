@@ -26,6 +26,22 @@ npm i -g pnpm
 
 ### 🛠️ Clone the Repository
 
+### ⚠️ DO NOT CLONE IN YOUR SYSTEM FOLDER
+
+Clone in a folder you will remember where like your documents folder
+
+Windows:
+
+```sh
+cd "%USERPROFILE%/Documents"
+```
+
+Linux or MacOS:
+
+```sh
+cd "$HOME/Documents"
+```
+
 ```sh
 git clone https://github.com/Equicord/Equicord
 cd Equicord

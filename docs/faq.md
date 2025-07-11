@@ -50,4 +50,4 @@ This is because of how Equibop detects games and programs using ARRPC. Learn mor
 
 ## 6. "I have a different issue!"
 
-For any other issues, please check the Equicord Discord server for support. You can find the link in the Resources section of this documentation.
+For any other issues, please check the ]Equicord Discord server](https://discord.gg/equicord-1173279886065029291) for support.

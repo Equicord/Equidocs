@@ -9,6 +9,10 @@ description: Guide on installing user plugins for Equicord and info about plugin
 
 Equicord supports any plugin to be built into your Discord (including 3rd-party plugins from Vencord). To install a user plugin, follow these steps:
 
+### ⚠️ IMPORTANT
+
+To install userplugins, Equicord needs to be built from source. See [here](https://docs.equicord.org/building-from-source) for more info.
+
 ### 1. ⏬ Download the Plugin
 
 #### ✅ Correct:

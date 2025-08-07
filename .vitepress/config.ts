@@ -43,7 +43,7 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Equicord/Equicord' },
-      { icon: 'discord', link: 'https://discord.gg/equicord-1173279886065029291' },
+      { icon: 'discord', link: 'https://equicord.org/discord' },
     ],
     footer: {
       copyright: "Copyright © 2025 Equicord",

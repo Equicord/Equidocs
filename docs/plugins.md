@@ -22,7 +22,7 @@ src/userplugins/MyMagicPlugin.ts
 src/userplugins/MyMagicPlugin/index.tsx
 ```
 
-#### ⚠️ Incorrect:
+#### ❌ Incorrect:
 
 ```plaintext
 src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.tsx
@@ -37,7 +37,21 @@ After downloading, place the plugin file in one of these locations:
 - **macOS:** `~/Library/Application Support/Equicord/src/userplugins/`
 - **Linux:** `~/.config/Equicord/src/userplugins/`
 
-### 3. 🔃 Restart Discord
+### 3. 🛠️ Build Equicord
+
+After placing the plugin, you need to rebuild Equicord to include the new plugin:
+
+```sh
+pnpm build
+```
+
+**Note:** If you want to enable Developer-only plugins, use:
+
+```sh
+pnpm build --dev
+```
+
+### 4. 🔃 Restart Discord
 
 Restart Discord completely for the plugin to take effect. You can then enable it in Equicord settings.
 

@@ -13,20 +13,28 @@ Equicord supports any plugin to be built into your Discord (including 3rd-party 
 
 To install userplugins, Equicord needs to be built from source. See [here](https://docs.equicord.org/building-from-source) for more info.
 
+Make a userplugins folder in src/ so it should be src/userplugins/
+
 ### 1. ⏬ Download the Plugin
 
 #### ✅ Correct:
 
 ```plaintext
-src/userplugins/MyMagicPlugin.ts
+src/userplugins/MyMagicPlugin/index.ts
 src/userplugins/MyMagicPlugin/index.tsx
 ```
 
 #### ❌ Incorrect:
 
 ```plaintext
+src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.ts
 src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.tsx
+
 src/userplugins/index.ts
+src/userplugins/index.tsx
+
+src/userplugins/MyMagicPlugin/MyMagicPlugin.ts
+src/userplugins/MyMagicPlugin/MyMagicPlugin.tsx
 ```
 
 ### 2. 📥 Place Plugin in Userplugins Folder

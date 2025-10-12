@@ -54,15 +54,6 @@ const members = [
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/60797172?v=4',
-    name: 'nyx',
-    title: 'Team',
-    links: [
-      { icon: 'github', link: 'https://github.com/verticalsync' },
-      { icon: svgIcon, link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' }
-    ]
-  },
-  {
     avatar: 'https://avatars.githubusercontent.com/u/150982280?v=4',
     name: 'Krystal / Juniper🌸🎀',
     title: 'Team',

@@ -41,16 +41,16 @@ const members = [
     title: 'Owner',
     links: [
       { icon: 'github', link: 'https://github.com/thororen1234' },
-      { icon: svgIcon, link: 'https://thororen.com' }
+      { icon: svgIcon, link: 'https://www.thororen.com' }
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/62218284?v=4',
-    name: 'vmohammad',
+    avatar: 'https://avatars.githubusercontent.com/u/81579850?v=4',
+    name: 'Naibuu',
     title: 'Team',
     links: [
-      { icon: 'github', link: 'https://github.com/vmohammad24/' },
-      { icon: svgIcon, link: 'https://vmohammad.dev/' }
+      { icon: 'github', link: 'https://github.com/Naibuu' },
+      { icon: svgIcon, link: 'https://www.naibuu.dev' }
     ]
   },
   {

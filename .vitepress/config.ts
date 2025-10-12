@@ -6,11 +6,6 @@ export default defineConfig({
   srcDir: 'docs',
   lang: 'en-US',
   assetsDir: 'public',
-  vite: {
-    server: {
-      allowedHosts: ['dev.vmohammad.dev']
-    }
-  },
   // auto generates a sitemap so ppl can search on google and find it (hopefully)
   sitemap: {
     hostname: "https://docs.equicord.org",

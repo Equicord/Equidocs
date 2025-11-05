@@ -36,7 +36,7 @@ import { VPTeamMembers } from 'vitepress/theme'
 const svgIcon = {svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>'}
 const members = [
   {
-    avatar: 'https://avatars.githubusercontent.com/u/78185467?v=4',
+    avatar: 'https://avatars.githubusercontent.com/u/78185467',
     name: 'thororen',
     title: 'Owner',
     links: [
@@ -45,7 +45,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/81579850?v=4',
+    avatar: 'https://avatars.githubusercontent.com/u/81579850',
     name: 'Naibuu',
     title: 'Team',
     links: [
@@ -54,39 +54,30 @@ const members = [
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/150982280?v=4',
+    avatar: 'https://avatars.githubusercontent.com/u/150982280',
     name: 'Krystal / Juniper🌸🎀',
     title: 'Team',
     links: [
       { icon: 'github', link: 'https://github.com/KrstlSkll69' },
-      { icon: svgIcon, link: 'https://krstlskll69.github.io' }
+      { icon: svgIcon, link: 'https://krystal.thororen.com' }
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/126973723?v=4',
+    avatar: 'https://avatars.githubusercontent.com/u/126973723',
     name: 'Cortex',
     title: 'Team',
     links: [
       { icon: 'github', link: 'https://github.com/refurbishing' },
-      { icon: svgIcon, link: 'https://cortex.rest/' }
+      { icon: svgIcon, link: 'https://cortex.rest' }
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/71186972?v=4',
+    avatar: 'https://avatars.githubusercontent.com/u/71186972',
     name: 'creations',
     title: 'Team',
     links: [
       { icon: 'github', link: 'https://github.com/creationsss' },
-      { icon: svgIcon, link: 'https://creations.works/' }
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/33640860?v=4',
-    name: 'Aspy',
-    title: 'Helper',
-    links: [
-      { icon: 'github', link: 'https://github.com/SomeAspy' },
-      { icon: svgIcon, link: 'https://aspy.dev/' }
+      { icon: svgIcon, link: 'https://creations.works' }
     ]
   },
   {
@@ -95,9 +86,30 @@ const members = [
     title: 'Helper',
     links: [
       { icon: 'github', link: 'https://github.com/DrWhoFan13' },
-      { icon: svgIcon, link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' }
     ]
-  }
+  },
+  {
+    avatar: 'https://images.equicord.org/api/undefined/files/raw/019a51fa-0cdf-7000-83cf-1d4198a25356',
+    name: 'Rotes',
+    title: 'Helper',
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/92535668',
+    name: 'Murphy',
+    title: 'Helper',
+    links: [
+      { icon: 'github', link: 'https://github.com/EtorixDev' },
+      { icon: svgIcon, link: 'https://etorix.dev' }
+    ]
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/134332787',
+    name: 'Jake',
+    title: 'Helper',
+    links: [
+      { icon: 'github', link: 'https://github.com/justjxke' },
+    ]
+  },
 ]
 </script>
 

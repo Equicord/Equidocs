@@ -3,10 +3,9 @@ title: Plugin Development
 description: Learn how Equicord plugins work, how to install user plugins, and how to start developing your own.
 ---
 
-# 🧩 Plugin Development
+# <IconPuzzle /> Plugin Development
 
-Equicord has a powerful and flexible plugin system, heavily inspired by Vencord.  
-You can **use existing Vencord plugins**, **create private user plugins**, or **even develop new plugins**!
+Equicord features a powerful and highly flexible plugin system, strongly inspired by Vencord. Users can make use of existing Vencord plugins, use their private plugins or develop entirely new plugins from scratch.
 
 This page covers:
 - Installing user plugins

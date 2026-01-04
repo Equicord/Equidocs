@@ -1,6 +1,9 @@
 svg.lucide {
   display: inline-block;
   vertical-align: middle;
-  margin-top: -4px;
-  margin-right: 4px;
+  width: 1.1em; 
+  height: 1.1em;
+  margin-top: -0.15em;
+  margin-right: 0.4rem;
+  stroke-width: 2.5px;
 }

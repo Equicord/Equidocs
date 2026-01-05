@@ -82,18 +82,13 @@ Which folder you use depends on **who the plugin is for** and **where it should 
 
 ### Plugin Types and Locations
 
-| Type             | Folder               | Description                                                   |
-|------------------|----------------------|---------------------------------------------------------------|
-| User Plugin      | src/userplugins      | Private plugins meant only for you. Not tracked or shared.   |
-| Vencord Plugin   | src/plugins          | Plugins sourced from or based on Vencord.                     |
-| Equicord Plugin  | src/equicordplugins  | Equicord plugins intended to ship with the project.          |
+| Type            | Folder              | Description                                                |
+| --------------- | ------------------- | ---------------------------------------------------------- |
+| Equicord Plugin | src/equicordplugins | Equicord plugins intended to ship with the project.        |
+| Vencord Plugin  | src/plugins         | Plugins sourced from or based on Vencord.                  |
+| User Plugin     | src/userplugins     | Private plugins meant only for you. Not tracked or shared. |
 
 ### Which one should I use?
-
-- Use **`userplugins/`** if:
-  - The plugin is just for you
-  - You’re experimenting or prototyping
-  - You don’t plan to share or maintain it long-term
 
 - Use **`equicordplugins/`** if:
   - The plugin is meant for Equicord users
@@ -104,6 +99,11 @@ Which folder you use depends on **who the plugin is for** and **where it should 
   - The plugin originates from Vencord
   - You are adapting or reusing Vencord plugins
   - You will contribute to Vencord
+  
+- Use **`userplugins/`** if:
+  - The plugin is just for you
+  - You’re experimenting or prototyping
+  - You don’t plan to share or maintain it long-term
 
 > If a plugin is only for personal use, keep it in **userplugins**.  
 > Anything meant to be shared or shipped should go into **equicordplugins**.
@@ -114,8 +114,8 @@ Which folder you use depends on **who the plugin is for** and **where it should 
 
 | Path                | Purpose                  |
 |---------------------|--------------------------|
-| userplugins/        | For personal plugins     |
 | equicordplugins/    | For Equicord plugins     |
+| userplugins/        | For personal plugins     |
 
 ### 2. Create a new folder using camelCase
 
@@ -180,7 +180,7 @@ If you’d like to help improve it, feel free to open a PR [here](https://github
 ### “My plugin isn’t working”
 
 Common issues:
-- Wrong folder (`userplugins`, `equicordplugins`, or `plugins`)
+- Wrong folder (`equicordplugins`, `plugins`, or `userplugins`)
 - `index.ts` or `index.tsx` doesn't exist
 - Folder name is not camelCase
 - Equicord was not rebuilt after adding the plugin

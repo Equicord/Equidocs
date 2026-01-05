@@ -110,6 +110,22 @@ const members = [
       { icon: 'github', link: 'https://github.com/justjxke' },
     ]
   },
+  {
+  	avatar: 'https://avatars.githubusercontent.com/u/69634294',
+   	name: 'Prism',
+    title: 'Helper',
+    links: [
+    	{ icon: 'github', link: 'https://github.com/imjustprism' }
+    ]
+  },
+  {
+  	avatar: 'https://avatars.githubusercontent.com/u/83366426',
+   	name: 'g',
+    title: 'Helper',
+    links: [
+    	{ icon: 'github', link: 'https://github.com/sankoofa' }
+    ]
+  },
 ]
 </script>
 

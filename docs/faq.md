@@ -3,7 +3,7 @@ title: FAQ
 description: Find answers to frequently asked questions and troubleshooting tips for Equicord.
 ---
 
-# ❔ FAQ
+# <IconHelp/> FAQ
 
 ## 1. "A JavaScript error occurred in the main process"
 

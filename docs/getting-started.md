@@ -3,9 +3,9 @@ title: Getting Started
 description: An introduction to Equicord, helping new users begin with installation and usage.
 ---
 
-# 🎯 Getting Started
+# <IconTarget/> Getting Started
 
-## ❔ Where to Start?
+## Where to Start?
 
 Welcome to the Equicord documentation! This guide will help you get started with installing and using Equicord. Equicord is a Vencord fork that is actively maintained and updated by the Equicord team and contributors with over 300+ plugins. You can find our additional plugins [here](https://equicord.org/plugins).
 

@@ -1,3 +1,5 @@
+import "./chunk-PZ5AY32C.js";
+
 // node_modules/minisearch/dist/es/index.js
 var ENTRIES = "ENTRIES";
 var KEYS = "KEYS";

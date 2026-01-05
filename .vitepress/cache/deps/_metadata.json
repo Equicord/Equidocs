@@ -1,49 +1,49 @@
 {
-  "hash": "b52cfa60",
-  "configHash": "eb3cd9b3",
-  "lockfileHash": "e3b0c442",
-  "browserHash": "80c0bcda",
+  "hash": "46fb2f5c",
+  "configHash": "768bb29b",
+  "lockfileHash": "acab5a06",
+  "browserHash": "a03611a7",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "e9bedb4e",
+      "fileHash": "339a2b84",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "6d47b6e0",
+      "fileHash": "b7fff77e",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "5970b85d",
+      "fileHash": "7edd71fb",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "5eff38f6",
+      "fileHash": "72b0fcdb",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "60087ad8",
+      "fileHash": "3e983607",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "97adb0eb",
+      "fileHash": "93d490bf",
       "needsInterop": false
     },
-    "@theme/index": {
-      "src": "../../../node_modules/vitepress/dist/client/theme-default/index.js",
-      "file": "@theme_index.js",
-      "fileHash": "264ca912",
+    "lucide-vue-next": {
+      "src": "../../../node_modules/lucide-vue-next/dist/esm/lucide-vue-next.js",
+      "file": "lucide-vue-next.js",
+      "fileHash": "0f9cdd3e",
       "needsInterop": false
     }
   },
@@ -53,6 +53,9 @@
     },
     "chunk-VJWGEPT5": {
       "file": "chunk-VJWGEPT5.js"
+    },
+    "chunk-PZ5AY32C": {
+      "file": "chunk-PZ5AY32C.js"
     }
   }
 }

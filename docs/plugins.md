@@ -142,7 +142,7 @@ export default definePlugin({
 });
 ```
 
-Use this format for plugins inside equicordplugins/.
+Use this format for plugins inside `equicordplugins/`.
 
 ### User Plugin
 
@@ -156,14 +156,14 @@ export default definePlugin({
 });
 ```
 
-Use this format for plugins inside userplugins/.
+Use this format for plugins inside `userplugins/`.
 
 ### Notes
 
 Guidelines:
 
-- name should be short, clear, and unique
-- description should clearly explain what the plugin does
+- `name` should be short, clear, and unique
+- `description` should clearly explain what the plugin does
 - Use Devs.YourName only for Equicord plugins
 - Use a plain object for personal or private plugins
 

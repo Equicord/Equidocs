@@ -53,9 +53,9 @@ src/userplugins/MyMagicPlugin/MyMagicPlugin.tsx
 
 Move the plugin folder to the correct location:
 
-* **Windows:** `Equicord\src\userplugins\`
-* **macOS:** `~/Library/Application Support/Equicord/src/userplugins/`
-* **Linux:** `~/.config/Equicord/src/userplugins/`
+- **Windows:** `Equicord\src\userplugins\`
+- **macOS:** `~/Library/Application Support/Equicord/src/userplugins/`
+- **Linux:** `~/.config/Equicord/src/userplugins/`
 
 ### 3. Build Equicord
 
@@ -74,7 +74,7 @@ pnpm build --dev
 
 ### 4. Restart Discord
 
-## <IconHammer/> Understanding Plugins in Equicord
+## <IconInfo/> Understanding Plugins in Equicord
 
 Equicord supports multiple plugin sources to keep development flexible while maintaining a clean separation between **personal plugins**, **Vencord-based plugins**, and **official Equicord plugins**.
 

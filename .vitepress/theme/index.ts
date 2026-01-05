@@ -13,7 +13,8 @@ const icons = {
   IconRocket:        { comp: Lucide.Rocket,        emoji: '🚀' },
   IconTarget:        { comp: Lucide.Target,        emoji: '🎯' },
   IconPlug:          { comp: Lucide.Plug,          emoji: '🔌' },
-  IconConstruction:  { comp: Lucide.Construction,  emoji: '🚧' }
+  IconConstruction:  { comp: Lucide.Construction,  emoji: '🚧' },
+  IconInfo:          { comp: Lucide.Info,          emoji: 'ℹ️' }
 }
 
 export default {

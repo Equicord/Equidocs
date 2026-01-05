@@ -76,17 +76,17 @@ pnpm build --dev
 
 ## <IconInfo/> Understanding Plugins in Equicord
 
-Equicord supports multiple plugin sources to keep development flexible while maintaining a clean separation between **personal plugins**, **Vencord-based plugins**, and **official Equicord plugins**.
+Equicord supports multiple plugin sources to keep development flexible while maintaining a clean separation between **personal plugins**, **Vencord-based plugins**, and **Equicord plugins**.
 
 Which folder you use depends on **who the plugin is for** and **where it should belong long-term**.
 
 ### Plugin Types and Locations
 
-| Type            | Folder              | Description                                                        |
-|-----------------|---------------------|--------------------------------------------------------------------|
-| User Plugin     | userplugins/        | Private plugins meant only for you. Not tracked or shared.        |
-| Vencord Plugin  | vencordplugins/     | Plugins sourced from or based on Vencord.                          |
-| Equicord Plugin | equicordplugins/    | Official Equicord plugins intended to ship with the project.      |
+| Type             | Folder               | Description                                                   |
+|------------------|----------------------|---------------------------------------------------------------|
+| User Plugin      | src/userplugins      | Private plugins meant only for you. Not tracked or shared.   |
+| Vencord Plugin   | src/plugins          | Plugins sourced from or based on Vencord.                     |
+| Equicord Plugin  | src/equicordplugins  | Equicord plugins intended to ship with the project.          |
 
 ### Which one should I use?
 
@@ -100,7 +100,7 @@ Which folder you use depends on **who the plugin is for** and **where it should 
   - It should be maintained and versioned
   - You will contribute to Equicord
 
-- Use **`vencordplugins/`** if:
+- Use **`plugins/`** if:
   - The plugin originates from Vencord
   - You are adapting or reusing Vencord plugins
   - You will contribute to Vencord
@@ -131,14 +131,17 @@ Inside `index.ts`, define your plugin using `definePlugin`.
 
 ### Equicord Plugin
 
-If this is your first time contributing an Equicord plugin, you must first add yourself to the **`Devs`** object.
+If this is your first time contributing an Equicord plugin, you must first add yourself to the **`EquicordDevs`** object.
 Go to `/src/utils/constants.ts`, add your entry, and then reference it in the `authors` field.
 
 ```ts
+import { EquicordDevs } from "@utils/constants";
+import definePlugin from "@utils/types";
+
 export default definePlugin({
     name: "MyCoolPlugin",
     description: "I am very cool!",
-    authors: [Devs.YourName],
+    authors: [EquicordDevs.YourName],
 });
 ```
 
@@ -146,12 +149,14 @@ Use this format for plugins inside `equicordplugins/`.
 
 ### User Plugin
 
-For user plugins, you don’t need to register yourself in `Devs`. Just provide your information directly as a plain object.
+For user plugins, you don’t need to register yourself in `EquicordDevs`. Just provide your information directly as a plain object.
 
 ```ts
+import definePlugin from "@utils/types";
+
 export default definePlugin({
     name: "MyCoolPlugin",
-    description: "I am very cute!",
+    description: "I am very cool!",
     authors: [{ name: "Your Name", id: 1234567890n }],
 });
 ```
@@ -164,7 +169,7 @@ Guidelines:
 
 - `name` should be short, clear, and unique
 - `description` should clearly explain what the plugin does
-- Use Devs.YourName only for Equicord plugins
+- Use `EquicordDevs.YourName` only for Equicord plugins
 - Use a plain object for personal or private plugins
 
 ## <IconRocket/> Extras & Help

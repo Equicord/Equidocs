@@ -23,7 +23,8 @@ Before continuing, make sure this folder exists:
 
 ```plaintext
 src/userplugins/
-```
+``` 
+> If the directory is not present in your project structure, **you will need to create it manually**.
 
 ### 1. Download the Plugin
 
@@ -74,7 +75,7 @@ pnpm build --dev
 
 ### 4. Restart Discord
 
-## <IconInfo/> Understanding Plugins in Equicord
+## Understanding Plugins in Equicord
 
 Equicord supports multiple plugin sources to keep development flexible while maintaining a clean separation between **personal plugins**, **Vencord-based plugins**, and **Equicord plugins**.
 
@@ -108,7 +109,7 @@ Which folder you use depends on **who the plugin is for** and **where it should 
 > If a plugin is only for personal use, keep it in **userplugins**.  
 > Anything meant to be shared or shipped should go into **equicordplugins**.
 
-## <IconFlask/> Creating Your First Plugin
+## Creating Your First Plugin
 
 ### 1. Choose the correct folder
 

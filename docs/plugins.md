@@ -3,7 +3,7 @@ title: Plugin Development
 description: Learn how Equicord plugins work, how to install user plugins, and how to start developing your own.
 ---
 
-# <IconPuzzle /> Plugin Development
+# <IconPuzzle/> Plugin Development
 
 Equicord features a powerful and highly flexible plugin system, strongly inspired by Vencord. Users can make use of existing Vencord plugins, use their private plugins or develop entirely new plugins from scratch.
 
@@ -12,11 +12,11 @@ This page covers:
 - Understanding the plugin structure
 - Getting started with plugin development
 
-## 🏭 Installing User Plugins
+## Installing User Plugins
 
 Equicord supports any plugin to be built into your Discord (including 3rd-party plugins from Vencord). To install a user plugin, follow these steps:
 
-### ⚠️ IMPORTANT
+### <IconAlert/> IMPORTANT
 To install user plugins, **Equicord MUST be built from source**. See [here](https://docs.equicord.org/building-from-source) for more info.
 
 Before continuing, make sure this folder exists:
@@ -25,18 +25,18 @@ Before continuing, make sure this folder exists:
 src/userplugins/
 ```
 
-### 1. ⏬ Download the Plugin
+### 1. Download the Plugin
 
 Each plugin **must have it's own folder**, and the entry file must be named `index.ts` or `index.tsx`.
 
-#### ✅ Correct structure
+#### <IconCheck/> Correct structure
 
 ```plaintext
 src/userplugins/MyMagicPlugin/index.ts
 src/userplugins/MyMagicPlugin/index.tsx
 ```
 
-#### ❌ Incorrect structures
+#### <IconX /> Incorrect structures
 
 ```plaintext
 src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.ts
@@ -49,7 +49,7 @@ src/userplugins/MyMagicPlugin/MyMagicPlugin.ts
 src/userplugins/MyMagicPlugin/MyMagicPlugin.tsx
 ```
 
-### 2. 📥 Place the Plugin in the User Plugins Folder
+### 2. Place the Plugin in the User Plugins Folder
 
 Move the plugin folder to the correct location:
 
@@ -57,7 +57,7 @@ Move the plugin folder to the correct location:
 * **macOS:** `~/Library/Application Support/Equicord/src/userplugins/`
 * **Linux:** `~/.config/Equicord/src/userplugins/`
 
-### 3. 🛠️ Build Equicord
+### 3. Build Equicord
 
 After adding the plugin, rebuild Equicord so it gets bundled:
 
@@ -72,9 +72,9 @@ pnpm build
 pnpm build --dev
 ```
 
-### 4. 🔃 Restart Discord
+### 4. Restart Discord
 
-## 🧠 Understanding Plugins in Equicord
+## <IconHammer/> Understanding Plugins in Equicord
 
 Equicord supports multiple plugin sources to keep development flexible while maintaining a clean separation between **personal plugins**, **Vencord-based plugins**, and **official Equicord plugins**.
 
@@ -108,7 +108,7 @@ Which folder you use depends on **who the plugin is for** and **where it should 
 > If a plugin is only for personal use, keep it in **userplugins**.  
 > Anything meant to be shared or shipped should go into **equicordplugins**.
 
-## 🧪 Creating Your First Plugin
+## <IconFlask/> Creating Your First Plugin
 
 ### 1. Choose the correct folder
 
@@ -119,9 +119,9 @@ Which folder you use depends on **who the plugin is for** and **where it should 
 
 ### 2. Create a new folder using camelCase
 
-* `myFirstPlugin` ✅
-* `MyFirstPlugin` ❌
-* `my first plugin` ❌
+* `myFirstPlugin` <IconCheck/>
+* `MyFirstPlugin` <IconX/>
+* `my first plugin` <IconX/>
 
 ### 3. Add an `index.ts` file
 
@@ -167,12 +167,12 @@ Guidelines:
 - Use Devs.YourName only for Equicord plugins
 - Use a plain object for personal or private plugins
 
-## 🧩 Extras & Help
+## <IconRocket/> Extras & Help
 
 This documentation is still evolving.
 If you’d like to help improve it, feel free to open a PR [here](https://github.com/Equicord/EquiDocs/pulls/)!
 
-### ❓ “My plugin isn’t working”
+### “My plugin isn’t working”
 
 Common issues:
 - Wrong folder (`userplugins`, `equicordplugins`, or `plugins`)
@@ -182,6 +182,6 @@ Common issues:
 
 If it still doesn’t work, check the build logs for errors.
 
-### 💬 Where to get help
+### Where to get help
 
 For plugin development suggestions/support, you can ask in the Equicord Discord. You may not get a reply if the user or person is not knowledgeable on the topic.

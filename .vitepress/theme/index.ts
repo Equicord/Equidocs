@@ -1,35 +1,26 @@
 import DefaultTheme from 'vitepress/theme'
-import { 
-  Puzzle,       // 🧩
-  TriangleAlert, // ⚠️
-  Factory,      // 🏭
-  CheckCircle2, // ✅
-  XCircle,      // ❌
-  Hammer,       // 🛠️
-  Download,     // 📥
-  RefreshCw,    // 🔃
-  Brain,        // 🧠
-  FlaskConical, // 🧪
-  HelpCircle,   // ❓ / ❔
-  MessageSquare // 💬
-} from 'lucide-vue-next'
-import type { App } from 'vue'
+import * as Lucide from 'lucide-vue-next'
 import './custom.css'
+
+const icons = {
+  IconPuzzle:        { comp: Lucide.Puzzle,        emoji: '🧩' },
+  IconAlert:         { comp: Lucide.TriangleAlert, emoji: '⚠️' },
+  IconCheck:         { comp: Lucide.CheckCircle2,  emoji: '✅' },
+  IconX:             { comp: Lucide.XCircle,       emoji: '❌' },
+  IconHammer:        { comp: Lucide.Hammer,        emoji: '🔨' },
+  IconFlask:         { comp: Lucide.FlaskConical,  emoji: '🧪' },
+  IconHelp:          { comp: Lucide.HelpCircle,    emoji: '❓' },
+  IconRocket:        { comp: Lucide.Rocket,        emoji: '🚀' },
+  IconTarget:        { comp: Lucide.Target,        emoji: '🎯' },
+  IconPlug:          { comp: Lucide.Plug,          emoji: '🔌' },
+  IconConstruction:  { comp: Lucide.Construction,  emoji: '🚧' }
+}
 
 export default {
   extends: DefaultTheme,
-  enhanceApp({ app }: { app: App }) {
-    app.component('IconPuzzle', Puzzle)
-    app.component('IconAlert', TriangleAlert)
-    app.component('IconFactory', Factory)
-    app.component('IconCheck', CheckCircle2)
-    app.component('IconX', XCircle)
-    app.component('IconHammer', Hammer)
-    app.component('IconDownload', Download)
-    app.component('IconRefresh', RefreshCw)
-    app.component('IconBrain', Brain)
-    app.component('IconFlask', FlaskConical)
-    app.component('IconHelp', HelpCircle)
-    app.component('IconChat', MessageSquare)
+  enhanceApp({ app }) {
+    Object.entries(icons).forEach(([name, { comp }]) => {
+      app.component(name, comp)
+    })
   }
 }

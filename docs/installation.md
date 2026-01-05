@@ -3,9 +3,9 @@ title: Installation
 description: Step-by-step installation guides for Equicord on Windows, MacOS, and Linux.
 ---
 
-# 🔌 Installation
+# <IconPlug /> Installation
 
-## 🛠️ Installing Equicord
+## Installing Equicord
 
 This guide will walk you through the installation process for Equicord across various platforms. Choose the appropriate method for your operating system.
 

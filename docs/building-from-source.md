@@ -59,10 +59,20 @@ pnpm install --no-frozen-lockfile
 pnpm build
 ```
 
-**Note:** To enable Developer-only plugins inside of Equicord, you must build using:
+> [!TIP]
+> To enable Developer-only plugins and access debugging tools like **PatchHelper**, you should build Equicord in Development Mode using the `--dev` flag:
 
 ```sh
 pnpm build --dev
+```
+
+> [!TIP]
+> If you are actively making changes to the source code, use **Watch Mode**. This automatically triggers a rebuild every time you save a file, saving you from running the build command manually:
+
+```sh
+pnpm build --watch
+# Or for dev mode with watch:
+pnpm build --dev --watch
 ```
 
 ### Inject Equicord into Discord

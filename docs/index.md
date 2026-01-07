@@ -23,8 +23,8 @@ features:
   - title: Installation
     details: Step-by-step guides for installing Equicord on all platforms.
     link: /installation
-  - title: Plugin Development
-    details: Explore how to install user plugins for Equicord.
+  - title: Plugins & Development
+    details: Learn to install user plugins and build custom ones.
     link: /plugins
   - title: FAQ
     details: Find answers to common questions and troubleshooting tips.

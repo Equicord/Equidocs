@@ -1,11 +1,11 @@
 ---
-title: Plugin Development
+title: Plugins & Development
 description: Learn how Equicord plugins work, how to install user plugins, and how to start developing your own.
 ---
 
-# <IconPuzzle/> Plugin Development
+# Plugins & Development
 
-Equicord features a powerful and highly flexible plugin system, strongly inspired by Vencord. Users can make use of existing Vencord plugins, use their private plugins or develop entirely new plugins from scratch.
+Equicord uses the same plugin system as Vencord. Users can make use of existing Vencord plugins, use their private plugins, or develop entirely new plugins from scratch.
 
 This page covers:
 - Installing user plugins
@@ -16,46 +16,41 @@ This page covers:
 
 Equicord supports any plugin to be built into your Discord (including 3rd-party plugins from Vencord). To install a user plugin, follow these steps:
 
-### <IconAlert/> IMPORTANT
-To install user plugins, **Equicord MUST be built from source**. See [here](https://docs.equicord.org/building-from-source) for more info.
+> [!WARNING]
+> To install user plugins, Equicord must be [built from source](https://docs.equicord.org/building-from-source).
 
 Before continuing, make sure this folder exists:
 
 ```plaintext
 src/userplugins/
-```
+``` 
+> If the directory is not present in your project structure, **you will need to create it manually**.
 
 ### 1. Download the Plugin
 
 Each plugin **must have it's own folder**, and the entry file must be named `index.ts` or `index.tsx`.
 
-#### <IconCheck/> Correct structure
+> [!TIP] Correct structure
+> ```plaintext
+> src/userplugins/MyMagicPlugin/index.ts
+> src/userplugins/MyMagicPlugin/index.tsx
+> ```
 
-```plaintext
-src/userplugins/MyMagicPlugin/index.ts
-src/userplugins/MyMagicPlugin/index.tsx
-```
-
-#### <IconX /> Incorrect structures
-
-```plaintext
-src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.ts
-src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.tsx
-
-src/userplugins/index.ts
-src/userplugins/index.tsx
-
-src/userplugins/MyMagicPlugin/MyMagicPlugin.ts
-src/userplugins/MyMagicPlugin/MyMagicPlugin.tsx
-```
+> [!DANGER] Incorrect structures
+> ```plaintext
+> src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.ts
+> src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.tsx
+>
+> src/userplugins/index.ts
+> src/userplugins/index.tsx
+>
+> src/userplugins/MyMagicPlugin/MyMagicPlugin.ts
+> src/userplugins/MyMagicPlugin/MyMagicPlugin.tsx
+> ```
 
 ### 2. Place the Plugin in the User Plugins Folder
 
-Move the plugin folder to the correct location:
-
-- **Windows:** `Equicord\src\userplugins\`
-- **macOS:** `~/Library/Application Support/Equicord/src/userplugins/`
-- **Linux:** `~/.config/Equicord/src/userplugins/`
+Move the plugin folder into `src/userplugins/` in your cloned Equicord repository.
 
 ### 3. Build Equicord
 
@@ -74,7 +69,7 @@ pnpm build --dev
 
 ### 4. Restart Discord
 
-## <IconInfo/> Understanding Plugins in Equicord
+## Understanding Plugins in Equicord
 
 Equicord supports multiple plugin sources to keep development flexible while maintaining a clean separation between **personal plugins**, **Vencord-based plugins**, and **Equicord plugins**.
 
@@ -108,7 +103,7 @@ Which folder you use depends on **who the plugin is for** and **where it should 
 > If a plugin is only for personal use, keep it in **userplugins**.  
 > Anything meant to be shared or shipped should go into **equicordplugins**.
 
-## <IconFlask/> Creating Your First Plugin
+## Creating Your First Plugin
 
 ### 1. Choose the correct folder
 
@@ -119,9 +114,11 @@ Which folder you use depends on **who the plugin is for** and **where it should 
 
 ### 2. Create a new folder using camelCase
 
-* `myFirstPlugin` <IconCheck/>
-* `MyFirstPlugin` <IconX/>
-* `my first plugin` <IconX/>
+| Example | Valid |
+|---------|-------|
+| `myFirstPlugin` | Yes |
+| `MyFirstPlugin` | No |
+| `my first plugin` | No |
 
 ### 3. Add an `index.ts` file
 
@@ -145,7 +142,7 @@ export default definePlugin({
 });
 ```
 
-Use this format for plugins inside `equicordplugins/`.
+Use this format for plugins inside `equicordplugins`.
 
 ### User Plugin
 
@@ -161,7 +158,7 @@ export default definePlugin({
 });
 ```
 
-Use this format for plugins inside `userplugins/`.
+Use this format for plugins inside `userplugins`.
 
 ### Notes
 
@@ -172,10 +169,10 @@ Guidelines:
 - Use `EquicordDevs.YourName` only for Equicord plugins
 - Use a plain object for personal or private plugins
 
-## <IconRocket/> Extras & Help
+## Extras & Help
 
-This documentation is still evolving.
-If you’d like to help improve it, feel free to open a PR [here](https://github.com/Equicord/EquiDocs/pulls/)!
+> [!NOTE]
+> Want to help improve these docs? Open a PR [here](https://github.com/Equicord/Equidocs/pulls).
 
 ### “My plugin isn’t working”
 

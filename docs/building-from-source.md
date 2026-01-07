@@ -3,7 +3,7 @@ title: Building from Source
 description: Learn how to build Equicord and Equibop from source for development purposes.
 ---
 
-# <IconConstruction /> Building from Source
+# Building from Source
 
 ## Equicord
 
@@ -18,7 +18,8 @@ Before starting, ensure you have the following dependencies installed:
 
 ### Install pnpm
 
-**Important:** For subsequent steps, do NOT use an admin/root terminal. Doing so could damage your Discord/Equicord installation and require a complete reinstall.
+> [!WARNING]
+> **Windows users:** Do not run the following commands in an administrator terminal. This can break your Discord installation.
 
 ```sh
 npm i -g pnpm
@@ -26,9 +27,8 @@ npm i -g pnpm
 
 ### Clone the Repository
 
-### <IconAlert/> DO NOT CLONE IN YOUR SYSTEM FOLDER
-
-Clone in a folder you will remember where like your documents folder
+> [!WARNING]
+> Do not clone in your system folder. Clone in a folder you will remember, like your Documents folder.
 
 Windows:
 
@@ -59,10 +59,20 @@ pnpm install --no-frozen-lockfile
 pnpm build
 ```
 
-**Note:** To enable Developer-only plugins inside of Equicord, you must build using:
+> [!TIP]
+> To enable Developer-only plugins and access debugging tools like **PatchHelper**, you should build Equicord in Development Mode using the `--dev` flag:
 
 ```sh
 pnpm build --dev
+```
+
+> [!TIP]
+> If you are actively making changes to the source code, use **Watch Mode**. This automatically triggers a rebuild every time you save a file, saving you from running the build command manually:
+
+```sh
+pnpm build --watch
+# Or for dev mode with watch:
+pnpm build --dev --watch
 ```
 
 ### Inject Equicord into Discord
@@ -71,66 +81,4 @@ pnpm build --dev
 pnpm inject
 ```
 
-### Start Equicord
-
-Start up Discord, and you now have Equicord! Well done, you built Equicord from source!
-
-## Equibop
-
-If you need to build Equibop from source for development purposes, follow these steps:
-
-### Prerequisites
-
-Before starting, ensure you have the following dependencies installed:
-
-- [Git](https://git-scm.com/download)
-- [Node.js LTS](https://nodejs.dev/en/)
-
-### Install pnpm
-
-**Important:** For subsequent steps, do NOT use an admin/root terminal. Doing so could damage your Discord/Equicord installation and require a complete reinstall.
-
-```sh
-npm i -g pnpm
-```
-
-### Clone the Repository
-
-```sh
-git clone https://github.com/Equicord/Equibop
-cd Equibop
-```
-
-### Install Dependencies
-
-```sh
-pnpm i
-```
-
-### Build Equibop
-
-Equibop can be built in 4 ways:
-
-#### Run it without packaging
-
-```sh
-pnpm start
-```
-
-#### Via Package Only
-
-```sh
-pnpm package
-```
-
-#### Only build the pacman target
-
-```sh
-pnpm package --linux pacman
-```
-
-#### Package to a directory only
-
-```sh
-pnpm package:dir
-```
+### Start Discord

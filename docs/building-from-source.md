@@ -3,7 +3,7 @@ title: Building from Source
 description: Learn how to build Equicord and Equibop from source for development purposes.
 ---
 
-# <IconConstruction /> Building from Source
+# Building from Source
 
 ## Equicord
 
@@ -18,7 +18,8 @@ Before starting, ensure you have the following dependencies installed:
 
 ### Install pnpm
 
-**Important:** For subsequent steps, do NOT use an admin/root terminal. Doing so could damage your Discord/Equicord installation and require a complete reinstall.
+> [!WARNING]
+> **Windows users:** Do not run the following commands in an administrator terminal. This can break your Discord installation.
 
 ```sh
 npm i -g pnpm
@@ -26,9 +27,8 @@ npm i -g pnpm
 
 ### Clone the Repository
 
-### <IconAlert/> DO NOT CLONE IN YOUR SYSTEM FOLDER
-
-Clone in a folder you will remember where like your documents folder
+> [!WARNING]
+> Do not clone in your system folder. Clone in a folder you will remember, like your Documents folder.
 
 Windows:
 
@@ -81,6 +81,4 @@ pnpm build --dev --watch
 pnpm inject
 ```
 
-### Start Equicord
-
-Start up Discord, and you now have Equicord! Well done, you built Equicord from source!
+### Start Discord

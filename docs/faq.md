@@ -3,7 +3,7 @@ title: FAQ
 description: Find answers to frequently asked questions and troubleshooting tips for Equicord.
 ---
 
-# <IconHelp/> FAQ
+# FAQ
 
 ## 1. "A JavaScript error occurred in the main process"
 
@@ -46,7 +46,7 @@ This could be because of OpenASAR. Simply uninject OpenASAR from Discord. This c
 
 ## 5. "I'm using Equibop and it's not detecting my game(s) or programs!"
 
-This is because of how Equibop detects games and programs using ARRPC. Learn more about ARRPC [here](https://github.com/OpenAsar/arrpc).
+This is because of how Equibop detects games and programs using arrpc-bun. Learn more about arrpc-bun [here](https://github.com/Creationsss/arrpc-bun).
 
 ## 6. "I have a different issue!"
 

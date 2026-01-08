@@ -89,7 +89,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://images.equicord.org/api/undefined/files/raw/019a51fa-0cdf-7000-83cf-1d4198a25356',
+    avatar: 'https://cdn.nest.rip/uploads/3c0a913e-f1b3-4529-9cad-45d18330af66.png',
     name: 'Rotes',
     title: 'Helper',
   },

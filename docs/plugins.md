@@ -32,8 +32,8 @@ Each plugin **must have it's own folder**, and the entry file must be named `ind
 
 > [!TIP] Correct structure
 > ```plaintext
-> src/userplugins/MyMagicPlugin/index.ts
-> src/userplugins/MyMagicPlugin/index.tsx
+> src/userplugins/myMagicPlugin/index.ts
+> src/userplugins/myMagicPlugin/index.tsx
 > ```
 
 > [!DANGER] Incorrect structures

@@ -26,6 +26,9 @@ features:
   - title: Plugins & Development
     details: Learn to install user plugins and build custom ones.
     link: /plugins
+  - title: Plugin Submission
+    details: Guidelines, rules and the workflow for submitting plugins to Equicord.
+    link: /plugin-submission
   - title: FAQ
     details: Find answers to common questions and troubleshooting tips.
     link: /faq
@@ -123,7 +126,7 @@ const members = [
    	name: 'g',
     title: 'Helper',
     links: [
-    	{ icon: 'github', link: 'https://github.com/sankoofa' }
+    	{ icon: 'github', link: 'https://github.com/bbpltergiest' }
     ]
   },
 ]

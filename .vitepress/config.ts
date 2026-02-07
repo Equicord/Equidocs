@@ -27,7 +27,8 @@ export default defineConfig({
           { text: 'Getting Started', link: '/getting-started' },
           { text: 'Installation', link: '/installation' },
           { text: 'Building from Source', link: '/building-from-source' },
-          { text: 'Plugins & Development', link: '/plugins' },
+					{ text: 'Plugins & Development', link: '/plugins' },
+          { text: 'Plugin Submission', link: '/plugin-submission' },
           { text: 'FAQ', link: '/faq' }
         ]
       },

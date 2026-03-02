@@ -46,7 +46,7 @@ This could be because of OpenASAR. Simply uninject OpenASAR from Discord. This c
 
 ## 5. "I'm using Equibop and it's not detecting my game(s) or programs!"
 
-This is because of how Equibop detects games and programs using arrpc-bun. Learn more about [arrpc-bun](https://github.com/Creationsss/arrpc-bun).
+This is because of how Equibop detects games and programs using arrpc-bun. Learn more about arrpc-bun [here](https://github.com/Creationsss/arrpc-bun).
 
 ## 6. "I have a different issue!"
 

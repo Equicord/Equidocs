@@ -171,8 +171,10 @@ Guidelines:
 
 ## Extras & Help
 
-> [!NOTE]
-> Want to help improve these docs? Open a PR [here](https://github.com/Equicord/Equidocs/pulls).
+Learn more in depth plugin development information on our [DeepWiki](https://deepwiki.com/Equicord/Equicord)
+
+>[!NOTE]
+>**DeepWiki is AI driven and may contain inaccuracies. Always verify information from the official docs or source code.**
 
 ### “My plugin isn’t working”
 
@@ -187,3 +189,6 @@ If it still doesn’t work, check the build logs for errors.
 ### Where to get help
 
 For plugin development suggestions/support, you can ask in the Equicord Discord. You may not get a reply if the user or person is not knowledgeable on the topic.
+
+> [!NOTE]
+> Want to help improve these docs? Open a PR [here](https://github.com/Equicord/Equidocs/pulls).

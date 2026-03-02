@@ -18,7 +18,7 @@ Your Discord install is likely messed up. Please follow this:
 3. Repeat for `%LocalAppData%`.
 4. Install Discord.
 
-OR do a clean reinstall using the guide [on corrupt Discord installation](https://support.discord.com/hc/en-us/articles/115004307527--Windows-Corrupt-Installation).
+OR do a clean reinstall using the guide [on corrupt Discord installations](https://support.discord.com/hc/en-us/articles/115004307527--Windows-Corrupt-Installation).
 
 ### Simplified Steps
 

@@ -18,9 +18,9 @@ Your Discord install is likely messed up. Please follow this:
 3. Repeat for `%LocalAppData%`.
 4. Install Discord.
 
-OR do a clean reinstall using the guide [here](https://support.discord.com/hc/en-us/articles/115004307527--Windows-Corrupt-Installation).
+OR do a clean reinstall using the guide [on corrupt Discord installation](https://support.discord.com/hc/en-us/articles/115004307527--Windows-Corrupt-Installation).
 
-### Simplified Steps:
+### Simplified Steps
 
 1. Hold the Windows Key and press `R`. Type `%AppData%` and click OK.
 2. Delete the Discord folder.
@@ -33,7 +33,7 @@ OR do a clean reinstall using the guide [here](https://support.discord.com/hc/en
 
 ## 3. "Something went wrong. Please check the logs above."
 
-This could be Windows Defender blocking Equicord's CLI installer. Please disable or add an exclusion. Learn how to add an exclusion [here](https://www.howtogeek.com/671233/how-to-add-exclusions-in-windows-defender-on-windows-10/).
+This could be Windows Defender blocking Equicord's CLI installer. Please disable or add an exclusion. Learn how to add an exclusion [in this article](https://www.howtogeek.com/671233/how-to-add-exclusions-in-windows-defender-on-windows-10/).
 
 ## 4. "Discord Activities aren't working!"
 
@@ -46,7 +46,7 @@ This could be because of OpenASAR. Simply uninject OpenASAR from Discord. This c
 
 ## 5. "I'm using Equibop and it's not detecting my game(s) or programs!"
 
-This is because of how Equibop detects games and programs using arrpc-bun. Learn more about arrpc-bun [here](https://github.com/Creationsss/arrpc-bun).
+This is because of how Equibop detects games and programs using arrpc-bun. Learn more about [arrpc-bun](https://github.com/Creationsss/arrpc-bun).
 
 ## 6. "I have a different issue!"
 

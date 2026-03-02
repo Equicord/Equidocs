@@ -33,10 +33,13 @@ Linux users have several installation options depending on their desktop environ
 - **Arch User Repository:** [Equicord on AUR](https://aur.archlinux.org/packages/equicord-installer-bin)
 - **Equibop:** [Releases](https://github.com/Equicord/Equibop/releases), [AUR](https://aur.archlinux.org/packages?K=equibop), [Flathub](https://flathub.org/apps/io.github.equicord.equibop)
 - **Equicord via Shell:**
+
   ```sh
   sh -c "$(curl -sS https://raw.githubusercontent.com/Equicord/Equicord/refs/heads/main/misc/install.sh)"
   ```
+
 - **Equibop on NixOS:** (currently outdated, waiting for PR merge)
+
   ```sh
   nix-shell -p equibop
   ```

@@ -88,4 +88,4 @@ pnpm inject
 Instructions for building **Equibop** from source have moved to the [Equibop Docs](https://equibop.org/wiki/linux/building-from-source).
 
 > [!NOTE]
-> Unless you're a developer, there's no reason to build from source. To use **user plugins** or **dev builds**, simply clone **Equicord** instead. More details [here](https://equibop.org/wiki/linux/dev-build/).
+> Unless you're a developer, there's no reason to build from source. To use **user plugins** or **dev builds**, simply clone **Equicord** instead. More details [on equibop linux dev build wiki](https://equibop.org/wiki/linux/dev-build/).

@@ -114,26 +114,25 @@ const members = [
     ]
   },
   {
-  	avatar: 'https://avatars.githubusercontent.com/u/69634294',
-   	name: 'Prism',
+    avatar: 'https://avatars.githubusercontent.com/u/69634294',
+    name: 'Prism',
     title: 'Helper',
     links: [
-    	{ icon: 'github', link: 'https://github.com/imjustprism' }
+     { icon: 'github', link: 'https://github.com/imjustprism' }
     ]
   },
   {
-  	avatar: 'https://avatars.githubusercontent.com/u/83366426',
-   	name: 'g',
+    avatar: 'https://avatars.githubusercontent.com/u/83366426',
+    name: 'g',
     title: 'Helper',
     links: [
-    	{ icon: 'github', link: 'https://github.com/bbpltergiest' }
+     { icon: 'github', link: 'https://github.com/bbpltergiest' }
     ]
   },
 ]
 </script>
 
-<div style="margin-top: 48px;"> 
+<div style="margin-top: 48px;">
   <h2 style="text-align: center; font-size: 24px; font-weight: 600; margin-bottom: 24px;">Our Team</h2>
   <VPTeamMembers size="small" :members="members" />
 </div>
-

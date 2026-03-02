@@ -11,10 +11,10 @@ Welcome to the Equicord documentation! This guide will help you get started with
 
 ## What is Equicord?
 
-**Equicord** is a Vencord fork that is actively maintained and updated by the Equicord team and contributors with over 300+ plugins. You can find our additional plugins [here](https://equicord.org/plugins).
+**Equicord** is a Vencord fork that is actively maintained and updated by the Equicord team and contributors with over 300+ plugins. You can find additional plugins [on plugin list page](https://equicord.org/plugins). Or in [our GitHub repository](https://github.com/Equicord/Equicord) under `src/equicordplugins`.
 
-**Equibop** is a standalone Discord client with Equicord pre-installed. No need to patch your existing Discord installation.
+**Equibop** is a standalone Discord client with Equicord pre-installed. No need to patch your existing Discord installation. It comes with various performance optimizations and additional features while respecting your privacy (blocking discord's telemetry). Learn more about equibop on its [website](https://equibop.org/)
 
-**Equilotl** is the installer for injecting Equicord into your existing Discord client.
+**Equilotl** is the installer for injecting Equicord into your existing Discord client. Learn more in [Equilotl GitHub repository](https://github.com/Equicord/Equilotl)
 
 Equicord supports Linux, macOS, and Windows.

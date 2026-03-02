@@ -1,6 +1,7 @@
 # Equidocs
 
 [![Discord](https://img.shields.io/discord/1207691698386501634.svg?color=768AD4&label=Discord&logo=discord&logoColor=white)](https://equicord.org/discord)  
+
 ## 📢 Join Our Community  
 
 Stay updated with commits and changes by joining our [Discord server](https://equicord.org/discord)!  

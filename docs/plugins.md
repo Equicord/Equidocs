@@ -8,6 +8,7 @@ description: Learn how Equicord plugins work, how to install user plugins, and h
 Equicord uses the same plugin system as Vencord. Users can make use of existing Vencord plugins, use their private plugins, or develop entirely new plugins from scratch.
 
 This page covers:
+
 - Installing user plugins
 - Understanding the plugin structure
 - Getting started with plugin development
@@ -18,12 +19,13 @@ Equicord supports any plugin to be built into your Discord (including 3rd-party 
 
 > [!WARNING]
 > To install user plugins, Equicord must be [built from source](https://docs.equicord.org/building-from-source).
-
-Before continuing, make sure this folder exists:
-
-```plaintext
-src/userplugins/
-``` 
+>
+>Before continuing, make sure this folder exists:
+>
+>```text
+>src/userplugins/
+>```
+>
 > If the directory is not present in your project structure, **you will need to create it manually**.
 
 ### 1. Download the Plugin
@@ -31,13 +33,15 @@ src/userplugins/
 Each plugin **must have it's own folder**, and the entry file must be named `index.ts` or `index.tsx`.
 
 > [!TIP] Correct structure
-> ```plaintext
+>
+> ```text
 > src/userplugins/myMagicPlugin/index.ts
 > src/userplugins/myMagicPlugin/index.tsx
 > ```
 
 > [!DANGER] Incorrect structures
-> ```plaintext
+>
+> ```text
 > src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.ts
 > src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.tsx
 >
@@ -114,11 +118,11 @@ Which folder you use depends on **who the plugin is for** and **where it should 
 
 ### 2. Create a new folder using camelCase
 
-| Example | Valid |
-|---------|-------|
-| `myFirstPlugin` | Yes |
-| `MyFirstPlugin` | No |
-| `my first plugin` | No |
+| Example          | Valid |
+|------------------|-------|
+| `myFirstPlugin`  | Yes   |
+| `MyFirstPlugin`  | No    |
+| `my first plugin`| No    |
 
 ### 3. Add an `index.ts` file
 
@@ -171,12 +175,17 @@ Guidelines:
 
 ## Extras & Help
 
-> [!NOTE]
-> Want to help improve these docs? Open a PR [here](https://github.com/Equicord/Equidocs/pulls).
+To learn more about how plugins work be sure to checkout our [our GitHub repository](https://github.com/Equicord/Equicord) and explore the existing plugins in `src/equicordplugins` (Equicord) and `src/plugins` (Vencord).
+
+Learn more in depth plugin development information on our [DeepWiki](https://deepwiki.com/Equicord/Equicord)
+
+>[!NOTE]
+>**DeepWiki is AI driven and may contain inaccuracies. Always verify information from the official docs or source code.**
 
 ### “My plugin isn’t working”
 
 Common issues:
+
 - Wrong folder (`equicordplugins`, `plugins`, or `userplugins`)
 - `index.ts` or `index.tsx` doesn't exist
 - Folder name is not camelCase
@@ -187,3 +196,6 @@ If it still doesn’t work, check the build logs for errors.
 ### Where to get help
 
 For plugin development suggestions/support, you can ask in the Equicord Discord. You may not get a reply if the user or person is not knowledgeable on the topic.
+
+> [!NOTE]
+> Want to help improve these docs? Open a PR [on GitHub](https://github.com/Equicord/Equidocs/pulls).

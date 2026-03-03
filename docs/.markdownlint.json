@@ -1,0 +1,10 @@
+{
+    "default": true,
+    "MD013": false,
+    "MD025": false,
+    "MD028": false,
+    "MD033": {
+        "allowed_elements": ["script", "div", "h2", "svg", "path", "VPTeamMembers"]
+    },
+    "MD059": false
+}

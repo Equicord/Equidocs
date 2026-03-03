@@ -14,7 +14,7 @@ Before submitting anything, make sure you understand Equicord’s goals, technic
 
 ## Ways to Contribute
 
-Contributions are submitted through pull requests on GitHub. If you are new to Git or GitHub, we recommend reading [this guide](https://opensource.com/article/19/7/create-pull-request-github).
+Contributions are submitted through pull requests on GitHub. If you are new to Git or GitHub, we recommend reading [this guide about creating pull requests](https://opensource.com/article/19/7/create-pull-request-github).
 
 Pull requests can target either the `main` or `dev` branch.  
 Unless you are experienced and know what you are doing, **always target `main`**. The `dev` branch may contain unstable changes and can be force-pushed frequently, which may break your pull request.

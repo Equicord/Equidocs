@@ -33,7 +33,7 @@ features:
     details: Find answers to common questions and troubleshooting tips.
     link: /faq
 ---
-
+<!-- markdownlint-disable MD041 -->
 <script setup lang="ts">
 import { VPTeamMembers } from 'vitepress/theme'
 const svgIcon = {svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>'}
@@ -114,26 +114,25 @@ const members = [
     ]
   },
   {
-  	avatar: 'https://avatars.githubusercontent.com/u/69634294',
-   	name: 'Prism',
+    avatar: 'https://avatars.githubusercontent.com/u/69634294',
+    name: 'Prism',
     title: 'Helper',
     links: [
-    	{ icon: 'github', link: 'https://github.com/imjustprism' }
+     { icon: 'github', link: 'https://github.com/imjustprism' }
     ]
   },
   {
-  	avatar: 'https://avatars.githubusercontent.com/u/83366426',
-   	name: 'g',
+    avatar: 'https://avatars.githubusercontent.com/u/83366426',
+    name: 'g',
     title: 'Helper',
     links: [
-    	{ icon: 'github', link: 'https://github.com/bbpltergiest' }
+     { icon: 'github', link: 'https://github.com/bbpltergiest' }
     ]
   },
 ]
 </script>
 
-<div style="margin-top: 48px;"> 
+<div style="margin-top: 48px;">
   <h2 style="text-align: center; font-size: 24px; font-weight: 600; margin-bottom: 24px;">Our Team</h2>
   <VPTeamMembers size="small" :members="members" />
 </div>
-

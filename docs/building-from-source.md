@@ -53,21 +53,23 @@ cd Equicord
 pnpm install --no-frozen-lockfile
 ```
 
-### Build Equicord
+## Discord Desktop
+
+### Build
 
 ```sh
 pnpm build
 ```
 
 > [!TIP]
-> To enable Developer-only plugins and access debugging tools like **PatchHelper**, you should build Equicord in Development Mode using the `--dev` flag:
+> To enable Developer-only plugins and access debugging tools like **PatchHelper**, build in Development Mode using the `--dev` flag:
 
 ```sh
 pnpm build --dev
 ```
 
 > [!TIP]
-> If you are actively making changes to the source code, use **Watch Mode**. This automatically triggers a rebuild every time you save a file, saving you from running the build command manually:
+> If you are actively making changes to the source code, use **Watch Mode**. This automatically triggers a rebuild every time you save a file:
 
 ```sh
 pnpm build --watch
@@ -75,13 +77,13 @@ pnpm build --watch
 pnpm build --dev --watch
 ```
 
-### Inject Equicord into Discord
+### Inject and Start
+
+Run the injector to patch your Discord installation, then start Discord normally:
 
 ```sh
 pnpm inject
 ```
-
-### Start Discord
 
 ## Equibop
 
@@ -89,3 +91,26 @@ Instructions for building **Equibop** from source have moved to the [Equibop Doc
 
 > [!NOTE]
 > Unless you're a developer, there's no reason to build from source. To use **user plugins** or **dev builds**, simply clone **Equicord** instead. More details [on Equibop's wiki](https://equibop.org/wiki/linux/dev-build/).
+
+## Web Browser
+
+### Build
+
+```sh
+pnpm buildWeb
+```
+
+> [!TIP]
+> To enable Developer-only plugins and access debugging tools like **PatchHelper**, build in Development Mode using the `--dev` flag:
+
+```sh
+pnpm buildWeb --dev
+```
+
+### Install
+
+After building, you will find the output files inside the `dist/` folder. Pick the one that matches your browser:
+
+- **extension-chrome.zip** — For Chrome and Chromium-based browsers. Go to `chrome://extensions`, enable Developer Mode, and drag the zip file into the window.
+- **extension-firefox.zip** — For Firefox. Go to `about:addons`, click the gear icon, and select `Install Add-on From File...`.
+- **Equicord.user.js** — Userscript for Tampermonkey, Greasemonkey, or any other userscript manager. Open the file in your browser and your userscript manager will prompt you to install it.

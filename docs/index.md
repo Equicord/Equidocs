@@ -23,9 +23,12 @@ features:
   - title: Installation
     details: Step-by-step guides for installing Equicord on all platforms.
     link: /installation
-  - title: Plugins & Development
-    details: Learn to install user plugins and build custom ones.
+  - title: Plugins
+    details: Learn how Equicord plugins work and how to install user plugins.
     link: /plugins
+  - title: Plugin Development
+    details: Learn to build your own custom plugins for Equicord from scratch.
+    link: /plugin-development
   - title: Plugin Submission
     details: Guidelines, rules and the workflow for submitting plugins to Equicord.
     link: /plugin-submission
@@ -123,10 +126,10 @@ const members = [
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/83366426',
-    name: 'g',
+    name: 'g (luqe)',
     title: 'Helper',
     links: [
-     { icon: 'github', link: 'https://github.com/bbpltergiest' }
+     { icon: 'github', link: 'https://github.com/luqenov' }
     ]
   },
 ]

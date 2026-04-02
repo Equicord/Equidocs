@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Equicord Documentation",
@@ -19,7 +20,6 @@ export default defineConfig({
       { text: 'Installation', link: '/installation' },
       { text: 'FAQ', link: '/faq' }
     ],
-
     sidebar: [
       {
         text: 'Documentation',
@@ -27,7 +27,8 @@ export default defineConfig({
           { text: 'Getting Started', link: '/getting-started' },
           { text: 'Installation', link: '/installation' },
           { text: 'Building from Source', link: '/building-from-source' },
-          { text: 'Plugins & Development', link: '/plugins' },
+          { text: 'User Plugins', link: '/plugins' },
+          { text: 'Plugin Development', link: '/plugin-development' },
           { text: 'Plugin Submission', link: '/plugin-submission' },
           { text: 'FAQ', link: '/faq' }
         ]
@@ -36,13 +37,12 @@ export default defineConfig({
     search: {
       provider: 'local',
     },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Equicord/Equicord' },
       { icon: 'discord', link: 'https://equicord.org/discord' },
     ],
     footer: {
-      copyright: "Copyright © 2025 Equicord",
+      copyright: "Copyright © 2026 Equicord",
       message: "Made with ❤️ by the Equicord team",
     },
     logo: '/logo.png',

@@ -55,7 +55,7 @@ Place the plugin inside `src/userplugins/`. **Each plugin must have it's own fol
 > ```text
 > src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.ts
 > src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.tsx
-> 
+>
 > src/userplugins/index.ts
 > src/userplugins/index.tsx
 >

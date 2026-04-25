@@ -9,7 +9,7 @@ Equicord supports any plugin to be built into your Discord, whether they are plu
 
 > [!WARNING]
 > Equicord does not provide support for user plugins or dev builds.
-> If you run into issues you cannot resolve on your own, you may ask in developer channels(**NOT SUPPORT**), but a response is not guaranteed.
+> If you run into issues you cannot resolve on your own, you may ask in developer channels (**NOT SUPPORT**), but a response is not guaranteed.
 
 ## Before You Start
 
@@ -21,11 +21,11 @@ You will also need to understand where plugins live in the project, since puttin
 
 Equicord separates plugins into three folders depending on their purpose:
 
-| Folder                  | What goes here                                              |
-| ----------------------- | ----------------------------------------------------------- |
-| `src/equicordplugins/`  | Official Equicord plugins, shipped with the project.        |
-| `src/plugins/`          | Plugins sourced from or based on Vencord.                   |
-| `src/userplugins/`      | Your private plugins. Not tracked, not shared.              |
+| Folder                 | What goes here                                         |
+| ---------------------- | ------------------------------------------------------ |
+| `src/equicordplugins/` | Official Equicord plugins, shipped with the project.   |
+| `src/plugins/`         | Plugins sourced from or based on Vencord.              |
+| `src/userplugins/`     | Your private plugins. Not tracked, not shared.         |
 
 **Unless you are contributing to Equicord or Vencord, always use `src/userplugins/`.**
 
@@ -81,16 +81,69 @@ pnpm build --dev
 
 Once the build finishes, restart Discord. Your plugin should now appear in the plugins tab.
 
+## Updating Equicord & official plugins
+
+Run these three commands inside your Equicord folder:
+
+```sh
+git fetch
+git pull
+pnpm build
+```
+
+> [!NOTE]
+> `git fetch` and `git pull` only update **Equicord itself and its official plugins**. They do **not** update your user plugins automatically.
+
+After building, you only need to run `pnpm inject` again if Discord is not already injected. If it was already running, a simple restart of Discord is enough.
+
+## Updating user plugins
+
+Git does **not** manage your user plugins. To update a user plugin, you need to:
+
+> If you're experienced enough, you can look it up or figure out how make git manage it, but let's focus on simplicity.
+
+1. Download the new version of the plugin manually from its repository or source.
+2. Replace the old file(s) inside `src/userplugins/` with the new ones.
+3. Rebuild Equicord:
+
+```sh
+pnpm build
+```
+
+> [!TIP]
+> If you are not familiar with Git yet, the [GitHub Git guide](https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository) and the [Atlassian Git tutorials](https://www.atlassian.com/git/tutorials/syncing/git-pull) are great places to start. They will teach you how Git works and how to use it, which will help you both here and in many other situations.
+
 ## Troubleshooting
 
 If your plugin isn't showing up, check these first:
 
-- Wrong folder (`equicordplugins`, `plugins`, or `userplugins`)
-- The entry file is named `index.ts` or `index.tsx`.
-- Folder name is not camelCase
-- Equicord was not rebuilt after adding the plugin
+- Wrong folder (`equicordplugins`, `plugins`, or `userplugins`).
+- The entry file is not named `index.ts` or `index.tsx`.
+- Folder name is not camelCase.
+- Equicord was not rebuilt after adding the plugin.
 
-If none of the above helps, check the build output for errors — they usually point directly to the problem.
+### Missing dependencies
+
+If `pnpm build` complains about missing packages, run:
+
+```sh
+pnpm install
+```
+
+Then try building again.
+
+### Discord not reflecting your build
+
+If Discord still shows the old version after building, try rebuilding:
+
+```sh
+pnpm build
+```
+If the issue persists, make sure Discord was fully restarted after the build completed.
+
+### Something in your user plugin broke
+
+Errors that persist after running `pnpm install` are almost always caused by the plugin itself, a syntax error, a missing file, a broken import or whatever. Read the error message carefully and check the plugin's source manually.
 
 > [!NOTE]
 > Want to help improve these docs? Open a PR [on GitHub](https://github.com/Equicord/Equidocs/pulls).

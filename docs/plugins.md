@@ -111,7 +111,7 @@ pnpm build
 ```
 
 > [!TIP]
-> If you are not familiar with Git yet, the [GitHub Git guide](https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository) and the [Atlassian Git tutorials](https://www.atlassian.com/git/tutorials/syncing/git-pull) are great places to start. They will teach you how Git works and how to use it, which will help you both here and in many other situations.
+> If you are not familiar with Git yet, the [GitHub Git guide](https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository) and the [Git for beginners](https://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide) are great places to start. They will teach you how Git works and how to use it, which will help you both here and in many other situations.
 
 ## Troubleshooting
 

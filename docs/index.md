@@ -109,28 +109,33 @@ const members = [
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/134332787',
-    name: 'Jake',
-    title: 'Helper',
-    links: [
-      { icon: 'github', link: 'https://github.com/justjxke' },
-    ]
-  },
-  {
     avatar: 'https://avatars.githubusercontent.com/u/69634294',
     name: 'Prism',
     title: 'Helper',
     links: [
-     { icon: 'github', link: 'https://github.com/imjustprism' }
+      { icon: 'github', link: 'https://github.com/imjustprism' }
     ]
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/83366426',
-    name: 'g (luqe)',
+    name: 'g',
     title: 'Helper',
     links: [
-     { icon: 'github', link: 'https://github.com/luqenov' }
+      { icon: 'github', link: 'https://github.com/luqenov' }
     ]
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/273957775',
+    name: 'Talon',
+    title: 'Helper',
+    links: [
+      { icon: 'github', link: 'https://github.com/dulledtalons' }
+    ]
+  },
+  {
+    avatar: 'https://cdn.nest.rip/uploads/b68b0bd4-4d89-4164-b72c-ca7adbd0b108.png',
+    name: 'Kocgum',
+    title: 'Helper',
   },
 ]
 </script>

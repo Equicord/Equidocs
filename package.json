@@ -16,6 +16,6 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "lucide-vue-next": "^0.562.0"
+    "@lucide/vue": "^1.33.0"
   }
 }

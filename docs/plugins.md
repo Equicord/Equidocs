@@ -81,6 +81,24 @@ pnpm build --dev
 
 Once the build finishes, restart Discord. Your plugin should now appear in the plugins tab.
 
+## Installing Plugins via UserPluginInstaller
+
+You can install user plugins straight from Discord with **UserPluginInstaller** plugin, no manual cloning or rebuilding required.
+
+> [!TIP]
+> UserPluginInstaller is only available on **dev builds**. Make sure you build Equicord with:
+>
+> ```sh
+> pnpm build --dev
+> ```
+
+Once enabled, any message containing a link to a plugin's Git repository will show an **Install Plugin** button underneath it. Clicking it opens a popup with the plugin's metadata and a few warnings. Review them, and the plugin will be installed.
+
+> [!WARNING]
+>
+> - **Do not install** plugins from untrusted people until you have reviewed them yourself. Neither Equicord nor Vencord are responsible for anything that happens to your system as a result.
+> - UserPluginInstaller only works on platforms where native plugin helpers run, i.e. **Discord Desktop** or **Vesktop**.
+
 ## Updating Equicord & official plugins
 
 Run these three commands inside your Equicord folder:

@@ -21,8 +21,8 @@ Equicord offers both graphical and command-line installation options for Windows
 
 For macOS users, we provide a graphical installer & Equibop:
 
-- **Graphical X64 Installer:** [Download Equilotl-darwin-x64..zip](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-darwin-x64.zip)
-- **Graphical ARM64 Installer:** [Download Equilotl-darwin-arm64.zip](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-darwin-arm64.zip)
+- **Graphical X64 Installer:** [Download Equilotl-x64.dmg](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x64.dmg)
+- **Graphical ARM64 Installer:** [Download Equilotl-arm64.dmg](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.dmg)
 - **Equibop (Recommended):** [Releases](https://github.com/Equicord/Equibop/releases)
 
 ### Linux

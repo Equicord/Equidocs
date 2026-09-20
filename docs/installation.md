@@ -14,7 +14,9 @@ This guide will walk you through the installation process for Equicord across va
 Equicord offers both graphical and command-line installation options for Windows users:
 
 - **Graphical Installer:** [Download Equilotl.exe](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe)
+- **Graphical ARM64 Installer:** [Download Equilotl-arm64.exe](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.exe)
 - **Command-Line Installer:** [Download EquilotlCli.exe](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe)
+- **Command-Line ARM64 Installer:** [Download EquilotlCli-arm64.exe](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64.exe)
 - **Equibop:** [Releases](https://github.com/Equicord/Equibop/releases)
 
 ### MacOS

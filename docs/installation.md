@@ -13,32 +13,37 @@ This guide will walk you through the installation process for Equicord across va
 
 Equicord offers both graphical and command-line installation options for Windows users:
 
-- **Graphical Installer:** [Download Equilotl.exe](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe)
-- **Graphical ARM64 Installer:** [Download Equilotl-arm64.exe](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.exe)
-- **Command-Line Installer:** [Download EquilotlCli.exe](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe)
-- **Command-Line ARM64 Installer:** [Download EquilotlCli-arm64.exe](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64.exe)
+| | X64 | ARM64 |
+| --- | --- | --- |
+| GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.exe) |
+| CLI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64.exe) |
+
 - **Equibop:** [Releases](https://github.com/Equicord/Equibop/releases)
 
 ### MacOS
 
-For macOS users, we provide a graphical installer & Equibop:
+For macOS users, we provide graphical and command-line installers & Equibop:
 
-- **Graphical X64 Installer:** [Download Equilotl-x64.dmg](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x64.dmg)
-- **Graphical ARM64 Installer:** [Download Equilotl-arm64.dmg](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.dmg)
+| | Universal | X64 | ARM64 |
+| --- | --- | --- | --- |
+| GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.dmg) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x64.dmg) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.dmg) |
+| CLI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-universal) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-x64) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64) |
+
+The CLI builds are plain binaries, so run `chmod +x <file>` after downloading.
+
 - **Equibop (Recommended):** [Releases](https://github.com/Equicord/Equibop/releases)
 
 ### Linux
 
 Linux users have several installation options depending on their desktop environment and preferences:
 
-- [X11 GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11)
-- [Wayland GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland)
-- [Combined GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl)
-- [ARM64 X11 GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11-arm64)
-- [ARM64 Wayland GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland-arm64)
-- [ARM64 Combined GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64)
-- [CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-Linux)
-- [ARM64 CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-linux-arm64)
+| | X64 | ARM64 |
+| --- | --- | --- |
+| Combined GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64) |
+| X11 GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11-arm64) |
+| Wayland GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland-arm64) |
+| CLI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-linux) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-linux-arm64) |
+
 - **Arch User Repository:** [Equicord on AUR](https://aur.archlinux.org/packages/equicord-installer-bin)
 - **Equibop:** [Releases](https://github.com/Equicord/Equibop/releases), [AUR](https://aur.archlinux.org/packages?K=equibop), [Flathub](https://flathub.org/apps/io.github.equicord.equibop)
 - **Equicord via Shell:**

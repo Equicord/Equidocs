@@ -1,0 +1,248 @@
+---
+title: Installing Equicord
+description: Step-by-step installation guides for Equicord on Windows, MacOS, and Linux — including how to build it from source.
+---
+
+import { Aside, Badge, Card, CardGrid, LinkCard, Tabs, TabItem } from '@astrojs/starlight/components';
+
+### Windows
+
+Equicord offers both graphical and command-line installation options for Windows users:
+
+<Tabs syncKey="arch">
+    <TabItem label="x64">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe" />
+        </CardGrid>
+    </TabItem>
+    <TabItem label="ARM64">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.exe" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64.exe" />
+        </CardGrid>
+    </TabItem>
+</Tabs>
+
+<LinkCard
+    title="Equibop"
+    description="Alternative desktop client, pre-patched with Equicord."
+    href="https://github.com/Equicord/Equibop/releases"
+/>
+
+### MacOS
+
+For macOS users, we provide graphical and command-line installers, as well as Equibop:
+
+<Tabs syncKey="arch">
+    <TabItem label="Universal">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.dmg" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-universal" />
+        </CardGrid>
+    </TabItem>
+    <TabItem label="x64">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x64.dmg" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-x64" />
+        </CardGrid>
+    </TabItem>
+    <TabItem label="ARM64">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.dmg" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64" />
+        </CardGrid>
+    </TabItem>
+</Tabs>
+
+The CLI builds are plain binaries, so run `chmod +x <file>` after downloading.
+
+<LinkCard
+    title="Equibop"
+    description="Recommended — alternative desktop client, pre-patched with Equicord."
+    href="https://github.com/Equicord/Equibop/releases"
+/>
+
+### Linux
+
+Linux users have several installation options depending on their desktop environment and preferences:
+
+<Tabs syncKey="arch">
+    <TabItem label="x64">
+        <CardGrid>
+            <LinkCard title="Combined GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl" />
+            <LinkCard title="X11 GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11" />
+            <LinkCard title="Wayland GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland" />
+            <LinkCard title="CLI" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-linux" />
+        </CardGrid>
+    </TabItem>
+    <TabItem label="ARM64">
+        <CardGrid>
+            <LinkCard title="Combined GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64" />
+            <LinkCard title="X11 GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11-arm64" />
+            <LinkCard title="Wayland GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland-arm64" />
+            <LinkCard title="CLI" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-linux-arm64" />
+        </CardGrid>
+    </TabItem>
+</Tabs>
+
+<CardGrid>
+    <LinkCard title="Arch User Repository" description="Equicord installer on the AUR" href="https://aur.archlinux.org/packages/equicord-installer-bin" />
+    <LinkCard title="Equibop" description="GitHub Releases" href="https://github.com/Equicord/Equibop/releases" />
+    <LinkCard title="Equibop" description="Available on the AUR" href="https://aur.archlinux.org/packages?K=equibop" />
+    <LinkCard title="Equibop" description="Available on Flathub" href="https://flathub.org/apps/io.github.equicord.equibop" />
+</CardGrid>
+
+**Install Equicord via shell script:**
+
+```sh
+sh -c "$(curl -sS https://raw.githubusercontent.com/Equicord/Equicord/refs/heads/main/misc/install.sh)"
+```
+
+<Aside type="note" title="Equibop on NixOS">
+    This package is currently outdated, waiting for a PR merge.
+
+    ```sh
+    nix-shell -p equibop
+    ```
+</Aside>
+
+## Building from Source
+
+If you want to develop plugins or run the bleeding-edge version of Equicord, you can build it yourself instead of using one of the prebuilt installers above.
+
+### Prerequisites
+
+Equicord is powered by Node.js, git and pnpm, so you will have to install all of those before you can get started:
+- [Download git](https://git-scm.com/downloads)
+- [Download Node.js](https://nodejs.org/en/download/)
+- [Download pnpm](https://pnpm.io/installation)
+
+Make sure that all of them are added to your PATH, you will need it.
+
+To verify correct installation, run the following commands. All 3 should print the version of the respective software without errors:
+```sh
+git --version
+node --version
+pnpm --version
+```
+
+### Cloning the Equicord Repository
+
+Next, you should check out the Equicord source code!
+
+Pick a convenient folder that you can remember, for example your Documents folder.
+Open a terminal and point it to the desired folder:
+```sh
+cd Documents
+```
+Then, clone the Equicord repository:
+```sh
+git clone https://github.com/Equicord/Equicord
+```
+and finally point your terminal to the newly created Equicord folder:
+```sh
+cd Equicord
+```
+
+:::tip
+Whenever you open a new terminal, you will have to navigate to the Equicord folder again.
+If you stuck to the example above, the command to do this would be:
+```sh
+cd Documents/Equicord
+```
+:::
+
+### Installing Dependencies
+
+The next step is installing Equicord's dependencies. We use the `pnpm` package manager. Please do not use `npm` or `yarn`!
+
+Issue the following command:
+```sh
+pnpm install --frozen-lockfile
+```
+
+:::warning
+Equicord might add, remove or update dependencies at any time.
+Thus, you might receive errors like `Cannot find package "foobar" imported from ...` after updating.
+
+If this happens, you should run the same command once again to update the installed dependencies.
+:::
+
+### Building Equicord
+
+The last step is compiling the Equicord code.
+
+The steps for this will differ depending on which platform you want to build for.
+
+<Tabs syncKey="platform">
+    <TabItem label="Discord Desktop">
+        ```sh
+        pnpm build
+        ```
+    </TabItem>
+    <TabItem label="Equibop">
+        ```sh
+        pnpm build
+        ```
+    </TabItem>
+    <TabItem label="Web Browser">
+        ```sh
+        pnpm buildWeb
+        ```
+    </TabItem>
+</Tabs>
+
+:::tip
+You can build a Development Build of Equicord by appending `--dev` to the build command, for example `pnpm build --dev`.
+This gives you access to development tools like PatchHelper.
+:::
+
+:::caution
+Whenever you make changes to the source code, you will have to rebuild Equicord to apply your changes.
+To do so, simply run the same build command again.
+
+Since this becomes tedious quickly, we also provide a command that watches for changes and rebuilds automatically whenever you make changes.
+Simply add the `--watch` flag, for example `pnpm buildWeb --watch`!
+:::
+
+### Installing Your Custom Build
+
+You're done! Now you can install your custom build of Equicord.
+
+The installation process differs depending on the platform you want to install on.
+
+<Tabs syncKey="platform">
+    <TabItem label="Discord Desktop">
+        Run
+        ```sh
+        pnpm inject
+        ```
+        This will launch the Equilotl installer. Just patch the desired Discord install and you're done!
+    </TabItem>
+
+    <TabItem label="Equibop">
+        1. Open Equibop
+        2. Go to the Equibop Settings category
+        3. Scroll down all the way to the `Open Developer Settings` button, and click it.
+        4. Under `Equicord Location`, press `Change` and select the `dist` folder in your Equicord directory. For example, if you stuck to the example above, you would select `Documents/Equicord/dist`
+        5. Fully close and restart Equibop and you're done!
+
+        <Aside type="caution">
+            If you are using the Equibop flatpak on Linux, the path might turn into `/run/1000/...`.
+            This is a temporary path granted by the flatpak runtime and might break after a restart.
+
+            You should grant the Equibop flatpak access to the Equicord directory to solve this issue, for example via
+            ```sh
+            flatpak override io.github.equicord.equibop --filesystem="$HOME/Documents/Equicord"
+            ```
+        </Aside>
+    </TabItem>
+
+    <TabItem label="Web Browser">
+        You will find three builds in the `dist` folder:
+        - **extension-chrome.zip** — For Chrome and Chromium-based browsers. Go to `chrome://extensions`, enable Developer Mode, and drag the zip file into the window.
+        - **extension-firefox.zip** — For Firefox. Go to `about:addons`, click the gear icon, and select `Install Add-on From File...`.
+        - **Equicord.user.js** — Userscript for Tampermonkey, Greasemonkey, or any other userscript manager. Open the file in your browser and your userscript manager will prompt you to install it.
+    </TabItem>
+</Tabs>

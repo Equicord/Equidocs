@@ -1,0 +1,59 @@
+---
+title: Equicord Docs
+template: splash
+hero:
+  tagline: Documentation for Discord's other cutest client
+  actions:
+    - text: Getting Started
+      link: /start
+      variant: primary
+      icon: right-arrow
+    - text: Discord Community
+      link: https://equicord.org/discord
+      variant: primary
+      icon: discord
+    - text: FAQ
+      link: /faq/
+      variant: primary
+      icon: open-book
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import TeamGrid from '../../components/TeamGrid.astro';
+import rotesAvatar from '../../assets/team/rotes.png';
+import kocgumAvatar from '../../assets/team/kocgum.png';
+
+
+<CardGrid stagger>
+	<Card title="Get Started" icon="rocket">
+		Set up Equicord from scratch, configure your installation, and learn the basics you need to start using it.
+	</Card>
+	<Card title="Plugins" icon="puzzle">
+		Explore Equicord's plugin system, create your own, and learn how to develop, install, and configure additional plugins.
+	</Card>
+	<Card title="Build Your Own" icon="setting">
+		Learn how Equicord's plugin system works and follow the guides for creating, testing, and contributing your own plugins.
+	</Card>
+	<Card title="Need Help?" icon="comment">
+		Find answers to common questions, troubleshoot issues, and get help from the Equicord community on Discord.
+	</Card>
+</CardGrid>
+
+## Our Team
+
+export const members = [
+  { avatar: 'https://avatars.githubusercontent.com/u/78185467', name: 'thororen', title: 'Owner', github: 'https://github.com/thororen1234', website: 'https://www.thororen.com' },
+  { avatar: 'https://avatars.githubusercontent.com/u/81579850', name: 'Naibuu', title: 'Team', github: 'https://github.com/Naibuu', website: 'https://www.naibuu.dev' },
+  { avatar: 'https://avatars.githubusercontent.com/u/150982280', name: 'Krystal / Juniper🌸🎀', title: 'Team', github: 'https://github.com/KrstlSkll69', website: 'https://krystal.thororen.com' },
+  { avatar: 'https://avatars.githubusercontent.com/u/126973723', name: 'Cortex', title: 'Team', github: 'https://github.com/refurbishing', website: 'https://cortex.rest' },
+  { avatar: 'https://avatars.githubusercontent.com/u/71186972', name: 'creations', title: 'Team', github: 'https://github.com/creationsss', website: 'https://creations.works' },
+  { avatar: 'https://avatars.githubusercontent.com/u/159411967?v=4', name: 'DrWhoFan13', title: 'Helper', github: 'https://github.com/DrWhoFan13' },
+  { avatar: rotesAvatar, name: 'Rotes', title: 'Helper' },
+  { avatar: 'https://avatars.githubusercontent.com/u/92535668', name: 'Murphy', title: 'Helper', github: 'https://github.com/EtorixDev', website: 'https://etorix.dev' },
+  { avatar: 'https://avatars.githubusercontent.com/u/69634294', name: 'Prism', title: 'Helper', github: 'https://github.com/imjustprism' },
+  { avatar: 'https://avatars.githubusercontent.com/u/83366426', name: 'g', title: 'Helper', github: 'https://github.com/luqenov' },
+  { avatar: 'https://avatars.githubusercontent.com/u/273957775', name: 'Talon', title: 'Helper', github: 'https://github.com/dulledtalons' },
+  { avatar: kocgumAvatar, name: 'Kocgum', title: 'Helper' },
+]
+
+<TeamGrid members={members} />

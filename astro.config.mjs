@@ -12,7 +12,7 @@ export default defineConfig({
             logo: {
                 src: "./src/assets/logo.png"
             },
-            favicon: "logo.png",
+            favicon: "public/favicon.png",
             editLink: {
                 baseUrl: "https://github.com/Equicord/Equidocs/tree/main/"
             },

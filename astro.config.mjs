@@ -21,11 +21,11 @@ export default defineConfig({
                 { icon: "discord", href: "https://equicord.org/discord", label: "Discord" }
             ],
             lastUpdated: true,
-			sidebar: [
-				{
-					label: "Getting Started",
-					link: "/start"
-				},
+            sidebar: [
+                {
+                    label: "Getting Started",
+                    link: "/start"
+                },
                 {
                     label: "Installation & Preparation",
                     items: [{ autogenerate: { directory: "installing" } }]

@@ -47,5 +47,11 @@ export default defineConfig({
     ],
     vite: {
         assetsInclude: ["src/assets/**/*"]
+    },
+    image: {
+        remotePatterns: [
+            { protocol: "https", hostname: "avatars.githubusercontent.com" },
+            { protocol: "https", hostname: "cdn.nest.rip" }
+        ]
     }
 });

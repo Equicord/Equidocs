@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Member {
   avatar: string;
   name: string;
@@ -18,12 +20,12 @@ const { members } = Astro.props;
   {members.map((member) => (
     <div class="team-member">
       <div class="team-avatar-wrapper">
-        <img
+        <Image
           src={member.avatar}
           alt={`Avatar de ${member.name}`}
           class="team-avatar"
-          width="64"
-          height="64"
+          width={64}
+          height={64}
           loading="lazy"
         />
       </div>

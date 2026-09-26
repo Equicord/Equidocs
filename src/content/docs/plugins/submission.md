@@ -1,22 +1,25 @@
 ---
 title: Plugin Submission
 description: Learn how to contribute plugins and improvements to Equicord, including rules, workflow, and best practices.
+sidebar:
+    order: 5
 ---
 
-# Introduction
+# Plugin Submission
 
 Equicord is a community-driven project and plugin development is the primary way to contribute. This page explains how to submit plugins, follow project guidelines, and ensure your contribution has the best chance of being accepted.
 
-Before submitting anything, make sure you understand Equicord’s goals, technical standards and community expectations.
+Before submitting anything, make sure you understand Equicord's goals, technical standards and community expectations.
 
-> [!IMPORTANT]
-> All contributions must follow our [Code of Conduct](./CODE_OF_CONDUCT.md).
+:::note
+All contributions must follow our [Code of Conduct](public/CODE_OF_CONDUCT.md).
+:::
 
 ## Ways to Contribute
 
 Contributions are submitted through pull requests on GitHub. If you are new to Git or GitHub, we recommend reading [this guide about creating pull requests](https://opensource.com/article/19/7/create-pull-request-github).
 
-Pull requests must target the `dev` branch. Always create a new branch for your changes. Use a descriptive name like `feature/my-plugin-name` or `fix/some-bug` and open your pull request against `dev`.\
+Pull requests must target the `dev` branch. Always create a new branch for your changes. Use a descriptive name like `feature/my-plugin-name` or `fix/some-bug` and open your pull request against `dev`.
 Do **not** target `main` directly. The `main` branch is reserved for stable releases.
 
 ## Writing a Plugin
@@ -32,8 +35,9 @@ Before you start developing your plugin, you must:
 - Wait for feedback before starting development, as some ideas may not be accepted or may need adjustments.
 - Familiarize yourself with the plugin rules below.
 
-> [!WARNING]
-> Skipping these steps may result in your plugin being rejected, even if it is technically correct.
+:::caution
+Skipping these steps may result in your plugin being rejected, even if it is technically correct.
+:::
 
 ## Plugin Rules
 

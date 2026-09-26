@@ -1,167 +1,96 @@
 ---
-title: Installing User Plugins
-description: How to install third-party and private plugins in Equicord.
+title: Basic Plugin Setup
+description: Learn how to start developing your own Equicord plugins from scratch.
+sidebar:
+    order: 1
 ---
 
-# Installing User Plugins
+import { Tabs, TabItem } from "@astrojs/starlight/components";
 
-Equicord supports any plugin to be built into your Discord, whether they are plugins made by the community, adapted from Vencord, or ones you wrote yourself.
+Equicord uses the same plugin system as Vencord, which means you can develop entirely new plugins from scratch or adapt existing ones.
 
-> [!WARNING]
-> Equicord does not provide support for user plugins or dev builds.
-> If you run into issues you cannot resolve on your own, you may ask in developer channels (**NOT SUPPORT**), but a response is not guaranteed.
+## Creating Your First Plugin
 
-## Before You Start
+| Path                | Purpose               |
+| ------------------- | ---------------------- |
+| `equicordplugins/`  | For Equicord plugins  |
+| `userplugins/`      | For personal plugins  |
 
-User plugins require building Equicord from source. If you have not done this yet, follow the [Building from Source](/building-from-source) guide first.
+#### Create a new folder using camelCase
 
-You will also need to understand where plugins live in the project, since putting a plugin in the wrong folder is the most common cause of issues.
+| Example            | Valid |
+| ------------------- | ----- |
+| `myFirstPlugin`    | Yes   |
+| `MyFirstPlugin`    | No    |
+| `my first plugin`  | No    |
 
-### Where plugins live
+#### Add an `index.ts` file
 
-Equicord separates plugins into three folders depending on their purpose:
-
-| Folder                 | What goes here                                         |
-| ---------------------- | ------------------------------------------------------ |
-| `src/equicordplugins/` | Official Equicord plugins, shipped with the project.   |
-| `src/plugins/`         | Plugins sourced from or based on Vencord.              |
-| `src/userplugins/`     | Your private plugins. Not tracked, not shared.         |
-
-**Unless you are contributing to Equicord or Vencord, always use `src/userplugins/`.**
-
-## Installing a Plugin
-
-### 1. Create the `userplugins` folder
-
-This folder does not exist by default. Navigate to `src/` inside your Equicord folder and create a new folder named `userplugins`.
+Each plugin must have its own folder and the entry file must be named `index.ts` or `index.tsx`.
 
 ```text
-src/userplugins/
+src/userplugins/myFirstPlugin/index.ts
 ```
 
-### 2. Add the plugin
+## Plugin Boilerplate
 
-Place the plugin inside `src/userplugins/`. **Each plugin must have it's own folder**, and the entry file must be named `index.ts` or `index.tsx`.
+Inside `index.ts`, define your plugin using `definePlugin`. Which boilerplate you use depends on where your plugin will live.
 
-> [!TIP] Valid structures
->
-> ```text
-> src/userplugins/myMagicPlugin/index.ts
-> src/userplugins/myMagicPlugin/index.tsx
-> ```
+<Tabs syncKey="plugin-type">
+    <TabItem label="Equicord Plugin">
+        If this is your first time contributing an Equicord plugin, you must first add yourself to the **`EquicordDevs`** object. Go to `/src/utils/constants.ts`, add your entry, and then reference it in the `authors` field.
 
-> [!DANGER] Invalid structures
->
-> ```text
-> src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.ts
-> src/userplugins/MyMagicPlugin/MyMagicPlugin/MyMagicPlugin.tsx
->
-> src/userplugins/index.ts
-> src/userplugins/index.tsx
->
-> src/userplugins/MyMagicPlugin/MyMagicPlugin.ts
-> src/userplugins/MyMagicPlugin/MyMagicPlugin.tsx
-> ```
+        ```ts
+        import { EquicordDevs } from "@utils/constants";
+        import definePlugin from "@utils/types";
 
-### 3. Rebuild Equicord
+        export default definePlugin({
+            name: "MyCoolPlugin",
+            description: "I am very cool!",
+            authors: [EquicordDevs.YourName],
+        });
+        ```
 
-After adding the plugin, rebuild so it gets bundled into Discord:
+        Use this format for plugins inside `equicordplugins/`.
+    </TabItem>
 
-```sh
-pnpm build
-```
+    <TabItem label="User Plugin">
+        For user plugins, you don't need to register yourself in `EquicordDevs`. Just provide your information directly as a plain object.
 
-If you want to also include developer-only plugins, use:
+        ```ts
+        import definePlugin from "@utils/types";
 
-```sh
-pnpm build --dev
-```
+        export default definePlugin({
+            name: "MyCoolPlugin",
+            description: "I am very cool!",
+            authors: [{ name: "Your Name", id: 1234567890n }],
+        });
+        ```
 
-### 4. Restart Discord
+        Use this format for plugins inside `userplugins/`.
+    </TabItem>
+</Tabs>
 
-Once the build finishes, restart Discord. Your plugin should now appear in the plugins tab.
+## Guidelines
 
-## Installing Plugins via UserPluginInstaller
+- `name` should be short, clear, and unique.
+- `description` should clearly explain what the plugin does.
+- Use `EquicordDevs.YourName` only for Equicord plugins.
+- Use a plain object for personal or private plugins.
 
-You can install user plugins straight from Discord with **UserPluginInstaller** plugin, no manual cloning or rebuilding required.
+## Further Resources
 
-> [!TIP]
-> UserPluginInstaller is only available on **dev builds**. Make sure you build Equicord with:
->
-> ```sh
-> pnpm build --dev
-> ```
+To learn more about how plugins work, check out the [Equicord GitHub repository](https://github.com/Equicord/Equicord) and explore the existing plugins in:
 
-Once enabled, any message containing a link to a plugin's Git repository will show an **Install Plugin** button underneath it. Clicking it opens a popup with the plugin's metadata and a few warnings. Review them, and the plugin will be installed.
+- `src/equicordplugins` — Equicord plugins
+- `src/plugins` — Vencord plugins
 
-> [!WARNING]
->
-> - **Do not install** plugins from untrusted people until you have reviewed them yourself. Neither Equicord nor Vencord are responsible for anything that happens to your system as a result.
-> - UserPluginInstaller only works on platforms where native plugin helpers run, i.e. **Discord Desktop** or **Vesktop**.
+For more in-depth plugin development information, visit the [DeepWiki](https://deepwiki.com/Equicord/Equicord).
 
-## Updating Equicord & official plugins
+:::note
+**DeepWiki is AI driven and may contain inaccuracies. Always verify information from the official docs or source code.**
+:::
 
-Run these three commands inside your Equicord folder:
+## Where to get help
 
-```sh
-git fetch
-git pull
-pnpm build
-```
-
-> [!NOTE]
-> `git fetch` and `git pull` only update **Equicord itself and its official plugins**. They do **not** update your user plugins automatically.
-
-After building, you only need to run `pnpm inject` again if Discord is not already injected. If it was already running, a simple restart of Discord is enough.
-
-## Updating user plugins
-
-Git does **not** manage your user plugins. To update a user plugin, you need to:
-
-> If you're experienced enough, you can look it up or figure out how make git manage it, but let's focus on simplicity.
-
-1. Download the new version of the plugin manually from its repository or source.
-2. Replace the old file(s) inside `src/userplugins/` with the new ones.
-3. Rebuild Equicord:
-
-```sh
-pnpm build
-```
-
-> [!TIP]
-> If you are not familiar with Git yet, the [GitHub Git guide](https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository) and the [Git for beginners](https://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide) are great places to start. They will teach you how Git works and how to use it, which will help you both here and in many other situations.
-
-## Troubleshooting
-
-If your plugin isn't showing up, check these first:
-
-- Wrong folder (`equicordplugins`, `plugins`, or `userplugins`).
-- The entry file is not named `index.ts` or `index.tsx`.
-- Folder name is not camelCase.
-- Equicord was not rebuilt after adding the plugin.
-
-### Missing dependencies
-
-If `pnpm build` complains about missing packages, run:
-
-```sh
-pnpm install
-```
-
-Then try building again.
-
-### Discord not reflecting your build
-
-If Discord still shows the old version after building, try rebuilding:
-
-```sh
-pnpm build
-```
-If the issue persists, make sure Discord was fully restarted after the build completed.
-
-### Something in your user plugin broke
-
-Errors that persist after running `pnpm install` are almost always caused by the plugin itself, a syntax error, a missing file, a broken import or whatever. Read the error message carefully and check the plugin's source manually.
-
-> [!NOTE]
-> Want to help improve these docs? Open a PR [on GitHub](https://github.com/Equicord/Equidocs/pulls).
+For plugin development suggestions and support, you can ask in the Equicord Discord. You may not get a reply if the user or person is not knowledgeable on the topic.

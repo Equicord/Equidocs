@@ -30,7 +30,7 @@ Equicord separates plugins into three folders depending on their purpose:
 
 ## Installing a Plugin
 
-### 1. Create the `userplugins` folder
+### Create the `userplugins` folder
 
 This folder does not exist by default. Navigate to `src/` inside your Equicord folder and create a new folder named `userplugins`.
 
@@ -38,7 +38,7 @@ This folder does not exist by default. Navigate to `src/` inside your Equicord f
 src/userplugins/
 ```
 
-### 2. Add the plugin
+### Add the plugin
 
 Place the plugin inside `src/userplugins/`. **Each plugin must have its own folder**, and the entry file must be named `index.ts` or `index.tsx`.
 
@@ -62,7 +62,7 @@ src/userplugins/MyMagicPlugin/MyMagicPlugin.tsx
 ```
 :::
 
-### 3. Rebuild Equicord
+### Rebuild Equicord
 
 After adding the plugin, rebuild so it gets bundled into Discord:
 
@@ -76,7 +76,7 @@ If you want to also include developer-only plugins, use:
 pnpm build --dev
 ```
 
-### 4. Restart Discord
+### Restart Discord
 
 Once the build finishes, restart Discord. Your plugin should now appear in the plugins tab.
 

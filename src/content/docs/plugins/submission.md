@@ -10,7 +10,7 @@ Equicord is a community-driven project and plugin development is the primary way
 Before submitting anything, make sure you understand Equicord's goals, technical standards and community expectations.
 
 :::note
-All contributions must follow our [Code of Conduct](public/CODE_OF_CONDUCT.md).
+All contributions must follow our [Code of Conduct](/CODE_OF_CONDUCT.md).
 :::
 
 ## Ways to Contribute

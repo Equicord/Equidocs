@@ -11,11 +11,15 @@
     "typescript": "^5"
   },
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@lucide/vue": "^1.33.0"
+    "@astrojs/starlight": "^0.42.4",
+    "@lucide/vue": "^1.33.0",
+    "astro": "^7.3.5",
+    "starlight-links-validator": "^0.26.0",
+    "starlight-llms-txt": "^0.12.0"
   }
 }

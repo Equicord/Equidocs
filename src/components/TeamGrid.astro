@@ -1,0 +1,56 @@
+interface Member {
+  avatar: string;
+  name: string;
+  title: string;
+  github?: string;
+  website?: string;
+}
+
+interface Props {
+  members: Member[];
+}
+
+const { members } = Astro.props;
+---
+
+<div class="team-grid">
+  {members.map((member) => (
+    <div class="team-card">
+      <img src={member.avatar} alt={member.name} class="team-avatar" />
+      <p class="team-name">{member.name}</p>
+      <p class="team-title">{member.title}</p>
+      <div class="team-links">
+        {member.github && <a href={member.github} target="_blank" rel="noopener">GitHub</a>}
+        {member.website && <a href={member.website} target="_blank" rel="noopener">Website</a>}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .team-card { text-align: center; }
+  .team-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
+  }
+  .team-name { font-weight: 600; margin: 0; }
+  .team-title {
+    font-size: 0.85rem;
+    color: var(--sl-color-gray-3);
+    margin: 0 0 0.25rem;
+  }
+  .team-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+</style>

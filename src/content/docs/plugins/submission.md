@@ -5,8 +5,6 @@ sidebar:
     order: 5
 ---
 
-# Plugin Submission
-
 Equicord is a community-driven project and plugin development is the primary way to contribute. This page explains how to submit plugins, follow project guidelines, and ensure your contribution has the best chance of being accepted.
 
 Before submitting anything, make sure you understand Equicord's goals, technical standards and community expectations.

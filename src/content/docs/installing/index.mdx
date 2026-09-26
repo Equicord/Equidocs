@@ -3,56 +3,109 @@ title: Installing Equicord
 description: Step-by-step installation guides for Equicord on Windows, MacOS, and Linux — including how to build it from source.
 ---
 
-import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Aside, Badge, Card, CardGrid, LinkCard, Tabs, TabItem } from '@astrojs/starlight/components';
 
 ### Windows
 
 Equicord offers both graphical and command-line installation options for Windows users:
 
-| | X64 | ARM64 |
-| --- | --- | --- |
-| GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.exe) |
-| CLI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64.exe) |
+<Tabs syncKey="arch">
+    <TabItem label="x64">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe" />
+        </CardGrid>
+    </TabItem>
+    <TabItem label="ARM64">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.exe" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64.exe" />
+        </CardGrid>
+    </TabItem>
+</Tabs>
 
-- **Equibop:** [Releases](https://github.com/Equicord/Equibop/releases)
+<LinkCard
+    title="Equibop"
+    description="Alternative desktop client, pre-patched with Equicord."
+    href="https://github.com/Equicord/Equibop/releases"
+/>
 
 ### MacOS
 
-For macOS users, we provide graphical and command-line installers & Equibop:
+For macOS users, we provide graphical and command-line installers, as well as Equibop:
 
-| | Universal | X64 | ARM64 |
-| --- | --- | --- | --- |
-| GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.dmg) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x64.dmg) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.dmg) |
-| CLI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-universal) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-x64) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64) |
+<Tabs syncKey="arch">
+    <TabItem label="Universal">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.dmg" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-universal" />
+        </CardGrid>
+    </TabItem>
+    <TabItem label="x64">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x64.dmg" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-x64" />
+        </CardGrid>
+    </TabItem>
+    <TabItem label="ARM64">
+        <CardGrid>
+            <LinkCard title="GUI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64.dmg" />
+            <LinkCard title="CLI Installer" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-arm64" />
+        </CardGrid>
+    </TabItem>
+</Tabs>
 
 The CLI builds are plain binaries, so run `chmod +x <file>` after downloading.
 
-- **Equibop (Recommended):** [Releases](https://github.com/Equicord/Equibop/releases)
+<LinkCard
+    title="Equibop"
+    description="Recommended — alternative desktop client, pre-patched with Equicord."
+    href="https://github.com/Equicord/Equibop/releases"
+/>
 
 ### Linux
 
 Linux users have several installation options depending on their desktop environment and preferences:
 
-| | X64 | ARM64 |
-| --- | --- | --- |
-| Combined GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64) |
-| X11 GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11-arm64) |
-| Wayland GUI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland-arm64) |
-| CLI | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-linux) | [Download](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-linux-arm64) |
+<Tabs syncKey="arch">
+    <TabItem label="x64">
+        <CardGrid>
+            <LinkCard title="Combined GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl" />
+            <LinkCard title="X11 GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11" />
+            <LinkCard title="Wayland GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland" />
+            <LinkCard title="CLI" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-linux" />
+        </CardGrid>
+    </TabItem>
+    <TabItem label="ARM64">
+        <CardGrid>
+            <LinkCard title="Combined GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-arm64" />
+            <LinkCard title="X11 GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11-arm64" />
+            <LinkCard title="Wayland GUI" href="https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-wayland-arm64" />
+            <LinkCard title="CLI" href="https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-linux-arm64" />
+        </CardGrid>
+    </TabItem>
+</Tabs>
 
-- **Arch User Repository:** [Equicord on AUR](https://aur.archlinux.org/packages/equicord-installer-bin)
-- **Equibop:** [Releases](https://github.com/Equicord/Equibop/releases), [AUR](https://aur.archlinux.org/packages?K=equibop), [Flathub](https://flathub.org/apps/io.github.equicord.equibop)
-- **Equicord via Shell:**
+<CardGrid>
+    <LinkCard title="Arch User Repository" description="Equicord installer on the AUR" href="https://aur.archlinux.org/packages/equicord-installer-bin" />
+    <LinkCard title="Equibop" description="GitHub Releases" href="https://github.com/Equicord/Equibop/releases" />
+    <LinkCard title="Equibop" description="Available on the AUR" href="https://aur.archlinux.org/packages?K=equibop" />
+    <LinkCard title="Equibop" description="Available on Flathub" href="https://flathub.org/apps/io.github.equicord.equibop" />
+</CardGrid>
 
-  ```sh
-  sh -c "$(curl -sS https://raw.githubusercontent.com/Equicord/Equicord/refs/heads/main/misc/install.sh)"
-  ```
+**Install Equicord via shell script:**
 
-- **Equibop on NixOS:** (currently outdated, waiting for PR merge)
+```sh
+sh -c "$(curl -sS https://raw.githubusercontent.com/Equicord/Equicord/refs/heads/main/misc/install.sh)"
+```
 
-  ```sh
-  nix-shell -p equibop
-  ```
+<Aside type="note" title="Equibop on NixOS">
+    This package is currently outdated, waiting for a PR merge.
+
+    ```sh
+    nix-shell -p equibop
+    ```
+</Aside>
 
 ## Building from Source
 

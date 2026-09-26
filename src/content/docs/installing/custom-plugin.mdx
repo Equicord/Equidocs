@@ -3,6 +3,8 @@ title: Installing Custom Plugins
 description: How to install third-party and private plugins in Equicord.
 ---
 
+import { FileTree } from "@astrojs/starlight/components";
+
 Equicord supports any plugin to be built into your Discord, whether they are plugins made by the community, adapted from Vencord or ones you wrote yourself.
 
 :::caution
@@ -20,11 +22,12 @@ You will also need to understand where plugins live in the project, since puttin
 
 Equicord separates plugins into three folders depending on their purpose:
 
-| Folder                 | What goes here                                         |
-| ---------------------- | ------------------------------------------------------ |
-| `src/equicordplugins/` | Official Equicord plugins, shipped with the project.   |
-| `src/plugins/`         | Plugins sourced from or based on Vencord.              |
-| `src/userplugins/`     | Your private plugins. Not tracked, not shared.         |
+<FileTree>
+- src/
+  - equicordplugins/ Official Equicord plugins.
+  - plugins/ Plugins sourced from or based on Vencord.
+  - userplugins/ Your private plugins.
+</FileTree>
 
 **Unless you are contributing to Equicord or Vencord, always use `src/userplugins/`.**
 

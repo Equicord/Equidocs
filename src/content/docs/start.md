@@ -18,16 +18,12 @@ Welcome to the Equicord documentation! This guide will help you get started with
 Equicord supports Linux, macOS, and Windows.
 
 :::note
-If you're just looking to install Equicord and aren't planning on developing plugins, the pages under **Installation** cover everything you need.
+If you're just looking to install Equicord and aren't planning on developing plugins, please visit [our main site](https://equicord.org), or check the [Installation](/installing#_top) page here. They cover everything you need to get started without building.
 :::
 
 ### Developing Plugins
 
 If you're here because you want to learn how to create Equicord plugins, you've come to the right place!
-
-:::tip
-If you're actually just looking for Equicord download instructions, please [visit our main site](https://equicord.org) instead!
-:::
 
 This documentation will also cover topics like:
 

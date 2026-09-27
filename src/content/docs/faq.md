@@ -40,9 +40,9 @@ This could be Windows Defender blocking Equicord's CLI installer. Please disable
 This could be because of OpenASAR. Simply uninject OpenASAR from Discord. This can be done by opening the Equicord installer.
 
 - **CLI:**
-  ![CLI Example](/cli.png)
+  ![CLI Example](../../assets/screenshots/cli.png)
 - **GUI:**
-  ![GUI Example](/gui.png)
+  ![GUI Example](../../assets/screenshots/gui.png)
 
 ## 5. "I'm using Equibop and it's not detecting my game(s) or programs!"
 

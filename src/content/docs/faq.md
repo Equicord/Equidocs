@@ -3,8 +3,6 @@ title: FAQ
 description: Find answers to frequently asked questions and troubleshooting tips for Equicord.
 ---
 
-# FAQ
-
 ## 1. "A JavaScript error occurred in the main process"
 
 This could be many things to do with the installer or Discord's JavaScript files. If your installer is out of date, **PLEASE UPDATE!**

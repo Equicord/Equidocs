@@ -1,0 +1,8 @@
+node_modules/
+.astro/
+dist/
+pnpm-lock.yaml
+LICENSE
+
+# Preserve Markdown lists and code fences inside Starlight MDX components.
+src/content/docs/**/*.mdx

@@ -6,3 +6,12 @@ LICENSE
 
 # Preserve Markdown lists and code fences inside Starlight MDX components.
 src/content/docs/**/*.mdx
+
+# Preserve existing formatting in files outside the scope of the documentation update.
+.vscode/launch.json
+astro.config.mjs
+public/CODE_OF_CONDUCT.md
+src/components/RequiredStar.astro
+src/content/docs/plugins/submission.md
+src/content/docs/start.md
+tsconfig.json

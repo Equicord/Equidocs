@@ -24,6 +24,8 @@ However, this **should only be used as a last resort** if no other alternatives 
 
 Plugin Natives are defined via the `native.ts` file in your plugin folder. This file will be ran in the NodeJS environment. This file can export functions to make them available via IPC.
 
+The browser examples below require replacing `EquicordDevs.YourName` with your registered author entry, as described in [Basic Plugin Setup](/plugins/).
+
 Any function exported from here:
 
 - will be callable via `VencordNative` as demonstrated below.
@@ -33,19 +35,25 @@ Any function exported from here:
 <Tabs syncKey="native-file">
     <TabItem label="native.ts" icon="seti:windows">
     ```ts
-    export function add(event: IpcMainInvokeEvent, x: number, y: number) {
+    import type { IpcMainInvokeEvent } from "electron";
+
+    export function add(_event: IpcMainInvokeEvent, x: number, y: number) {
         return x + y;
     }
     ```
     </TabItem>
     <TabItem label="index.ts(x)" icon="seti:react">
-    ```js
-    import definePlugin, { PluginNative } from "@utils/types";
+    ```ts
+    import { EquicordDevs } from "@utils/constants";
+    import definePlugin from "@utils/types";
+    import type { PluginNative } from "@utils/types";
 
     const Native = VencordNative.pluginHelpers.MyPluginName as PluginNative<typeof import("./native")>;
 
     export default definePlugin({
         name: "MyPluginName",
+        description: "Demonstrates native plugin helpers.",
+        authors: [EquicordDevs.YourName],
         async start() {
             console.log(await Native.add(1, 2)); // logs 3
         }
@@ -117,7 +125,7 @@ CORS however cannot be modified by us, as the Server controls it. Instead, you m
             throw new Error("Invalid endpoint");
         }
 
-        const res = await fetch(url.toString());
+        const res = await fetch(url.toString(), { redirect: "error" });
         return await res.json();
     }
     ```
@@ -125,12 +133,16 @@ CORS however cannot be modified by us, as the Server controls it. Instead, you m
 
     <TabItem label="index.ts(x)" icon="seti:react">
     ```ts
-    import definePlugin, { PluginNative } from "@utils/types";
+    import { EquicordDevs } from "@utils/constants";
+    import definePlugin from "@utils/types";
+    import type { PluginNative } from "@utils/types";
 
     const Native = VencordNative.pluginHelpers.MyPluginName as PluginNative<typeof import("./native")>;
 
     export default definePlugin({
         name: "MyPluginName",
+        description: "Demonstrates native plugin helpers.",
+        authors: [EquicordDevs.YourName],
         async start() {
             console.log(await Native.fetchCoolAPI("/some-endpoint")); // logs the JSON response from https://example.com/some-endpoint
         }
@@ -142,5 +154,5 @@ CORS however cannot be modified by us, as the Server controls it. Instead, you m
 :::danger
 Don't export an overly broad fetch API from your native code as this completely undermines the security model and can expose sensitive data. Always restrict it to specific endpoints or domains.
 
-In the above example, the fetch API is restricted to the `https://example.com` domain, ensuring that only requests to this specific server are allowed.
+In the above example, the fetch API is restricted to the `https://example.com` origin and rejects redirects. For real plugins, also limit requests to the specific endpoints your feature needs.
 :::

@@ -1,6 +1,8 @@
 ---
 title: Installing Equicord
 description: Step-by-step installation guides for Equicord on Windows, MacOS, and Linux — including how to build it from source.
+sidebar:
+    order: 1
 ---
 
 import { Aside, Badge, Card, CardGrid, LinkCard, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -245,8 +247,8 @@ The installation process differs depending on the platform you want to install o
 
     <TabItem label="Web Browser">
         You will find three builds in the `dist` folder:
-        - **extension-chrome.zip** — For Chrome and Chromium-based browsers. Go to `chrome://extensions`, enable Developer Mode, and drag the zip file into the window.
-        - **extension-firefox.zip** — For Firefox. Go to `about:addons`, click the gear icon, and select `Install Add-on From File...`.
+        - **extension-chrome.zip** — For Chrome and Chromium-based browsers. Extract the ZIP, open `chrome://extensions`, enable Developer Mode, and choose **Load unpacked**. Select the extracted folder containing `manifest.json`. See the [Chrome development guide](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked).
+        - **extension-firefox.zip** — For testing a local unsigned build in Firefox, open `about:debugging#/runtime/this-firefox`, choose **Load Temporary Add-on**, and select the ZIP. This installation lasts until Firefox restarts; see the [Firefox development guide](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/).
         - **Equicord.user.js** — Userscript for Tampermonkey, Greasemonkey, or any other userscript manager. Open the file in your browser and your userscript manager will prompt you to install it.
     </TabItem>
 </Tabs>

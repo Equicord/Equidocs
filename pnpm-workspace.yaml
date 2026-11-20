@@ -1,3 +1,8 @@
 allowBuilds:
     esbuild: true
     sharp: true
+
+# NOTE: Compiler 0.5.3 exits with SIGILL on this project's local x86-64 environment.
+overrides:
+    "@astrojs/compiler-rs": "0.5.0"
+    "pagefind": "1.5.2"

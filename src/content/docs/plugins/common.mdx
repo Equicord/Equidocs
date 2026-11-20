@@ -1,194 +1,273 @@
 ---
 title: Plugin API
-description: Common patterns
+description: Add settings, commands, context menus, and UI elements using Equicord's declarative plugin APIs.
 sidebar:
     order: 2
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 
-To make plugin development easier, Equicord provides convenient ways to add many elements to your plugin, such as commands, automatic settings management and UI components.
+Equicord provides declarative plugin fields for settings, commands, message events, and UI elements. Prefer these fields over registering and removing API handlers yourself.
 
 This doc's purpose is to give a quick overview, it won't explain how to use them in-depth. For more detailed information, look at other plugins that use these APIs.
 
+## Before Using the Examples
+
+Start with a plugin that includes all three required fields:
+
+```ts
+import { EquicordDevs } from "@utils/constants";
+import definePlugin from "@utils/types";
+
+export default definePlugin({
+    name: "MyCoolPlugin",
+    description: "Demonstrates Equicord plugin APIs.",
+    authors: [EquicordDevs.YourName]
+});
+```
+
+Replace `EquicordDevs.YourName` with your registered author entry before building. For official Equicord plugins, follow [Basic Plugin Setup](/plugins/) and the [submission guide](/plugins/submission/). For a private user plugin, the setup guide explains how to provide author metadata directly.
+
 ## Plugin Settings
 
-Define a toggleable plugin setting which will allow users to toggle a feature in your plugin's settings modal:
+Create settings with `definePluginSettings` and include `settings` in your plugin definition. Outside React, read `settings.store.coolFeature` and assign to it to change the value. In a React component, use `settings.use` to subscribe to specific keys.
 
 ```tsx
 // Define settings. This will return a reactive settings object.
 // - To read: `const enableFeature = settings.store.coolFeature`
 // - To write: `settings.store.coolFeature = false`
+import { definePluginSettings } from "@api/Settings";
+import ErrorBoundary from "@components/ErrorBoundary";
+import { Paragraph } from "@components/Paragraph";
+import { OptionType } from "@utils/types";
+
 const settings = definePluginSettings({
     coolFeature: {
         type: OptionType.BOOLEAN,
-        description: "Enable a very cool feature",
+        description: "Enable the example feature.",
         default: true
     }
 });
 
-export default definePlugin({
-    name: "MyCoolPlugin",
-    // You MUST include your plugin settings in your plugin definition or you will get an error!
-    settings
-});
+const SETTING_KEYS: Array<"coolFeature"> = ["coolFeature"];
 
-function ReactComponent() {
-    // Reactive subscription that will automatically update your component when the setting changes
-    const { coolFeature } = settings.use(["coolFeature"]);
+const SettingsPreview = ErrorBoundary.wrap(function SettingsPreview() {
+    const { coolFeature } = settings.use(SETTING_KEYS);
 
-    return <div>{coolFeature ? "Cool feature is enabled" : "Cool feature is disabled"}</div>;
-}
+    return (
+        <Paragraph>
+            {coolFeature ? "The example feature is enabled." : "The example feature is disabled."}
+        </Paragraph>
+    );
+}, { noop: true });
 ```
+
+Add `settings` and `settingsAboutComponent: SettingsPreview` to your plugin definition. The preview renders above the settings controls. Keeping the subscription keys at module scope avoids creating a new subscription array on every render.
+
+For additional setting types, defaults, validation, and migrations, see the [settings API](https://github.com/Equicord/Equicord/blob/main/src/api/Settings.ts) and [setting types](https://github.com/Equicord/Equicord/blob/main/src/utils/types.ts).
 
 ## Slash Commands
 
-Register a slash command `/hello-world` that will send the text "Hello World!". Supports most command features like arguments and sub-commands.
+Register a slash command `/hello-world` that displays a local "Hello World!" response. It does not send a message to other users. Commands can also define arguments and subcommands.
 
 ```ts
-definePlugin({
-    name: "MyCoolPlugin",
-    commands: [
-        {
-            name: "hello-world",
-            description: "A simple hello world command",
-            execute: () => ({ content: "Hello World!" })
-        }
-    ]
-});
+import { sendBotMessage } from "@api/Commands";
+import type { PluginDef } from "@utils/types";
+
+const commands = [{
+    name: "hello-world",
+    description: "Display a local greeting.",
+    execute(_args, ctx) {
+        sendBotMessage(ctx.channel.id, { content: "Hello World!" });
+    }
+}] satisfies NonNullable<PluginDef["commands"]>;
 ```
+
+Include `commands` in your plugin definition. For command options, use `findOption` from `@api/Commands` instead of reading arguments by array position. See the [commands API](https://github.com/Equicord/Equicord/blob/main/src/api/Commands/index.ts).
+
+:::note
+This demonstrates the API, not a plugin submission idea. Simple slash-command-only plugins are not accepted under the [submission rules](/plugins/submission/).
+:::
 
 ## Context Menus
 
-Patch Discord's context (right click) menus to add your own options.
-
-Each context menu type (message, user, channel, etc.) has its own ID. The example below targets the message context menu. Its ID is `message`.
+Use `contextMenus` to modify a context menu's children in place. Each menu has a navigation ID; the message context menu uses `message`.
 
 <Tabs syncKey="context-menu">
-    <TabItem label="index.ts(x)" icon="seti:react">
-        ```ts
-        definePlugin({
-            name: "MyCoolPlugin",
-            contextMenus: {
-                message(children, props) {
-                    children.push(
-                        <Menu.MenuItem
-                            id="vc-myCoolPlugin-logMessage"
-                            key="vc-myCoolPlugin-logMessage"
-                            label="Log Message to Console"
-                            action={() => console.log(props.message)}
-                        />
-                    );
-                }
+    <TabItem label="index.tsx" icon="seti:react">
+        ```tsx
+        import type { PluginDef } from "@utils/types";
+        import { Menu, showToast } from "@webpack/common";
+
+        const contextMenus = {
+            message(children) {
+                children.push(
+                    <Menu.MenuItem
+                        id="vc-my-cool-plugin-example"
+                        key="vc-my-cool-plugin-example"
+                        label="Show Example Toast"
+                        action={() => showToast({ text: "The example menu item was clicked." })}
+                    />
+                );
             }
-        });
+        } satisfies NonNullable<PluginDef["contextMenus"]>;
         ```
+
+        Include `contextMenus` in your plugin definition. `Menu` is a named export from `@webpack/common`; `definePlugin` is the default export from `@utils/types` used in the base plugin above.
+
+        To insert an item into an existing group, use `findGroupChildrenByChildId` from `@api/ContextMenu`. Returning a new children array does not replace the menu.
     </TabItem>
 
     <TabItem label="Finding the ID" icon="seti:code-search">
-        - Open Browser DevTools
-        - In Discord, right click to open the context menu you want to target
-        - Use Inspect Elements to reveal it in the Elements tab
-        - Look for its ID in the html
+        - Open browser DevTools.
+        - Open the context menu you want to modify in Discord.
+        - Inspect the menu in the Elements panel and locate its ID.
 
-        ![](../../../assets/screenshots/plugin-api/context-id.png)
+        ![Message context menu ID in the DevTools Elements panel](../../../assets/screenshots/plugin-api/context-id.png)
     </TabItem>
 
     <TabItem label="Screenshot" icon="seti:image">
-            ![](../../../assets/screenshots/plugin-api/context.png)
+        ![A custom item appended to a message context menu](../../../assets/screenshots/plugin-api/context.png)
     </TabItem>
 </Tabs>
+
+See the [context menu API](https://github.com/Equicord/Equicord/blob/main/src/api/ContextMenu.ts) for group lookup and imperative registration helpers.
 
 ## Chat Bar Buttons
 
-Add custom buttons in the chat bar (where Gift, Gif, Sticker and Emoji buttons are)
+Chat bar buttons appear beside Discord's gift, GIF, sticker, and emoji controls.
 
-![](../../../assets/screenshots/plugin-api/chat-button.png)
+![Custom plugin button in the Discord chat bar](../../../assets/screenshots/plugin-api/chat-button.png)
 
-You define it via the `chatBarButton` property on your plugin object. The icon is used for `Settings > Equicord > Plugins > Manage Plugin UI Elements`.
+The `chatBarButton` field takes `{ icon, render }`. Its `icon` is used in `Settings > Equicord > Plugins > Manage Plugin UI Elements`. The render function must also render the visible icon inside a `ChatBarButton`.
 
-I'm not going to explain this further, just look at how the SilentTyping and Translate plugins use it.
+```tsx
+import { ChatBarButton } from "@api/ChatButtons";
+import type { ChatBarButtonFactory } from "@api/ChatButtons";
+import ErrorBoundary from "@components/ErrorBoundary";
+import { InfoIcon } from "@components/Icons";
+import type { PluginDef } from "@utils/types";
+import { showToast } from "@webpack/common";
 
-```ts
-definePlugin({
-    name: "MyCoolPlugin",
-    chatBarButton: {
-        icon: IconComponent,
-        render: ButtonComponent
-    }
-});
+function ExampleChatButton({ isMainChat }: Parameters<ChatBarButtonFactory>[0]) {
+    if (!isMainChat) return null;
+
+    return (
+        <ChatBarButton
+            tooltip="Show example toast"
+            onClick={() => showToast({ text: "The example chat button was clicked." })}
+        >
+            <InfoIcon />
+        </ChatBarButton>
+    );
+}
+
+const SafeExampleChatButton = ErrorBoundary.wrap(ExampleChatButton, { noop: true });
+
+const chatBarButton = {
+    icon: InfoIcon,
+    render: props => <SafeExampleChatButton {...props} />
+} satisfies NonNullable<PluginDef["chatBarButton"]>;
 ```
+
+Include `chatBarButton` in your plugin definition. Reusing `ChatBarButton` preserves Discord's tooltip, focus, and accessibility behavior. See the [API types](https://github.com/Equicord/Equicord/blob/main/src/api/ChatButtons.tsx) and [SilentTyping implementation](https://github.com/Equicord/Equicord/blob/main/src/plugins/silentTyping/index.tsx).
 
 ## Message Events
 
-Run code whenever the current user:
+React to message interactions by adding the corresponding handler to your plugin definition. Equicord manages registration and cleanup automatically.
 
-- **clicks** a message: Define `onMessageClick` on your plugin object
-- **sends** a message: Define `onBeforeMessageSend` on your plugin object
-- **edits** a message: Define `onBeforeMessageEdit` on your plugin object
+<Tabs syncKey="message-events">
+    <TabItem label="Click">
+        **`onMessageClick(message, channel, event)`**
 
-## Message Popover Buttons
-
-The message popover is the little bar that appears in the top-right corner of a message when you hover over it.
-
-![](../../../assets/screenshots/plugin-api/popover.png)
-
-You define it via the `messagePopoverButton` property on your plugin object. The icon is used for `Settings > Equicord > Plugins > Manage Plugin UI Elements`.
-
-I'm not going to explain this further, just look at how the QuickMention plugin uses it.
-
-```ts
-definePlugin({
-    name: "MyCoolPlugin",
-    messagePopoverButton: {
-        icon: IconComponent,
-        render: ButtonComponent
-    }
-});
-```
-
-## Message Accessories
-
-Message accessories are elements that appear below messages in chat, such as embeds.
-
-Define the `renderMessageAccessory` method on your plugin object to make use of this feature. This is the easiest way to add custom elements to messages.
-
-<Tabs syncKey="message-accessory">
-    <TabItem label="index.ts(x)" icon="seti:react">
-    ```tsx
-    definePlugin({
-        name: "MyCoolPlugin",
-        renderMessageAccessory(props) {
-            const { content } = props.message;
-
-            return (
-                <Paragraph size="sm" weight="bold">
-                    <div>Wow this is a great message!</div>
-                    {content.length > 1000 && <div>But wow it's long!!</div>}
-                </Paragraph>
-            );
-        }
-    });
-    ```
+        Runs when the user clicks a message. Use the message, channel, and mouse event to handle the interaction. Returns `void`.
     </TabItem>
+    <TabItem label="Send">
+        **`onBeforeMessageSend(channelId, message, options, props)`**
 
-    <TabItem label="Screenshot" icon="seti:image">
-            ![](../../../assets/screenshots/plugin-api/accessory.png)
+        Runs before a message is sent. Change `message.content` to update the outgoing text, or return `{ cancel: true }` to stop the send. Supports asynchronous handlers.
+    </TabItem>
+    <TabItem label="Edit">
+        **`onBeforeMessageEdit(channelId, messageId, message)`**
+
+        Runs before an edit is applied. Change `message.content` to update the edited text, or return `{ cancel: true }` to stop the edit. Supports asynchronous handlers.
     </TabItem>
 </Tabs>
 
+See the [message event types](https://github.com/Equicord/Equicord/blob/main/src/api/MessageEvents.ts) for the full payload definitions. Avoid logging message contents or other sensitive data when debugging.
+
+## Message Popover Buttons
+
+The message popover is the toolbar shown when hovering over a message.
+
+![Plugin button in the message hover toolbar](../../../assets/screenshots/plugin-api/popover.png)
+
+The `messagePopoverButton` field also takes `{ icon, render }`, but its `render` function receives a message and returns a **button descriptor or `null`**, not a React element. The descriptor contains the visible `label`, `icon`, and action handlers.
+
+```tsx
+import { InfoIcon } from "@components/Icons";
+import type { PluginDef } from "@utils/types";
+import { showToast } from "@webpack/common";
+
+const messagePopoverButton = {
+    icon: InfoIcon,
+    render(message) {
+        if (message.state === "SENDING") return null;
+
+        return {
+            label: "Show Example Toast",
+            icon: InfoIcon,
+            onClick: () => showToast({ text: "The example message button was clicked." })
+        };
+    }
+} satisfies NonNullable<PluginDef["messagePopoverButton"]>;
+```
+
+Include `messagePopoverButton` in your plugin definition. See the [popover API](https://github.com/Equicord/Equicord/blob/main/src/api/MessagePopover.tsx) and [QuickMention implementation](https://github.com/Equicord/Equicord/blob/main/src/plugins/quickMention/index.tsx).
+
+## Message Accessories
+
+Accessories appear below a message, alongside content such as embeds. `renderMessageAccessory` is a render function, not an object containing `render` or `position`.
+
+```tsx
+import type { MessageAccessoryFactory } from "@api/MessageAccessories";
+import ErrorBoundary from "@components/ErrorBoundary";
+import { Paragraph } from "@components/Paragraph";
+import type { Message } from "@vencord/discord-types";
+
+interface AccessoryProps {
+    message: Message;
+}
+
+const ExampleAccessory = ErrorBoundary.wrap(function ExampleAccessory({ message }: AccessoryProps) {
+    if (message.content.length <= 1000) return null;
+
+    return <Paragraph>This message contains more than 1,000 characters.</Paragraph>;
+}, { noop: true });
+
+const renderMessageAccessory: MessageAccessoryFactory = props => <ExampleAccessory message={props.message} />;
+```
+
+Include `renderMessageAccessory` in your plugin definition.
+
+![Custom message accessory rendered below a message](../../../assets/screenshots/plugin-api/accessory.png)
+
+See the [accessory API](https://github.com/Equicord/Equicord/blob/main/src/api/MessageAccessories.tsx). If you need imperative registration, such as multiple accessories or a custom position, pair `addMessageAccessory` with `removeMessageAccessory` and declare `dependencies: ["MessageAccessoriesAPI"]`.
+
 ## Message Decorations
 
-![](../../../assets/screenshots/plugin-api/msg-decor.png)
+![Plugin decoration next to a message author name](../../../assets/screenshots/plugin-api/msg-decor.png)
 
-Message Decorations are quite similar to accessories. But instead of appearing below the message, they appear next to the author's username, next to the clan tag, role icon, etc.
+`renderMessageDecoration` renders beside the message author's name. It is a function receiving `MessageDecorationProps` and returning a JSX element or `null`. Wrap the component with `ErrorBoundary.wrap(Component, { noop: true })` and assign it directly to the plugin field.
 
-Define the `renderMessageDecoration` method on your plugin object to make use of this feature.
+See the [decoration API and props](https://github.com/Equicord/Equicord/blob/main/src/api/MessageDecorations.tsx).
 
 ## Member List Decorations
 
-![](../../../assets/screenshots/plugin-api/member-decor.png)
+Add decorations beside users in the member or DM list by defining `renderMemberListDecorator` on your plugin object.
 
-Same as message decorations, except they appear next to members in the member list.
+![Plugin decoration next to a member in the member list](../../../assets/screenshots/plugin-api/member-decor.png)
 
-Define the `renderMemberListDecorator` method on your plugin object to make use of this feature.
+The function receives `DecoratorProps` and returns a JSX element, or `null` when no decoration should be shown. Use `props.type` to distinguish guild members from DM entries, and wrap your component with `ErrorBoundary.wrap(Component, { noop: true })`.
+
+See the [member list decorator API](https://github.com/Equicord/Equicord/blob/main/src/api/MemberListDecorators.tsx) for the available props.
